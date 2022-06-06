@@ -5,7 +5,7 @@ protocol AlertViewProtocol {
     func alertViewDidDisappear()
 }
 
-public class AlertViewLibrary: UIView {
+class AlertViewLibrary: UIView {
     var delegate:AlertViewProtocol?
     let text = AlertDefaultText()
     
@@ -42,13 +42,13 @@ public class AlertViewLibrary: UIView {
     private var normalTitleSize: UIFont = .systemFont(ofSize: 0)
     private let errorFont = UIFont.systemFont(ofSize: 32, weight: .bold)
     
-    public override func draw(_ rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         self.normalTitleSize = self.titleLabel.font
     }
 
     var notShowingCondition:(() -> (Bool))?
     
-    public func show(title: String? = "Loading", description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
+    func show(title: String? = "Loading", description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
 
         if notShowIfLoggedUser && (notShowingCondition?() ?? false) {
             completion(true)
@@ -112,7 +112,7 @@ public class AlertViewLibrary: UIView {
     }
 
     
-    public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {
+    func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {
         if !hideIndicatorBlockDesibled {
             let new = {
                 self.showAlert(buttons: buttons, title: title, description:description, type: type)
@@ -274,13 +274,13 @@ public class AlertViewLibrary: UIView {
         }
     }
 
-    public func fastHide() {
+    func fastHide() {
         fastHide { _ in
             
         }
     }
     
-    public func fastHide(completionn: @escaping (Bool) -> ()) {
+    func fastHide(completionn: @escaping (Bool) -> ()) {
         if !isShowing {
             completionn(false)
             return
@@ -327,7 +327,7 @@ public class AlertViewLibrary: UIView {
     }
 
 
-    public class func instanceFromNib() -> UIView {
+    class func instanceFromNib() -> UIView {
         return UINib(nibName: "IndicatorView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 
@@ -338,7 +338,7 @@ public class AlertViewLibrary: UIView {
         super.init(coder: aDecoder)
     }
 
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if canCloseOnSwipe {//if touches != view
             canCloseOnSwipe = false
             self.fastHide()
@@ -346,7 +346,7 @@ public class AlertViewLibrary: UIView {
     }
     
 
-    private func setAllHidden() {//mainthread
+    func setAllHidden() {//mainthread
         canCloseOnSwipe = false
         isShowing = false
         if leftButton.superview?.isHidden != true {
