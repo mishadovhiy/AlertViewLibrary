@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="AlertViewLibrary" id="tpT-tM-Tey" customClass="AlertViewLibrary" customModule="AlertViewLibrary">
+        <view contentMode="scaleToFill" restorationIdentifier="AlertView" id="tpT-tM-Tey" customClass="AlertViewLibrary">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
