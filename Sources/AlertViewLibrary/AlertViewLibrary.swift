@@ -33,7 +33,7 @@ public class AlertViewLibrary: UIView {
     @IBOutlet weak private var imageView: UIImageView!
     
     private var canCloseOnSwipe = false
-    var isShowing = false
+    public var isShowing = false
 
     private var anshowedAIS: [Any] = []
     private var rightFunc: (Any?, Bool)?
