@@ -48,7 +48,7 @@ public class AlertViewLibrary: UIView {
 
     var notShowingCondition:(() -> (Bool))?
     
-    func show(title: String? = "Loading", description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
+    public func show(title: String? = "Loading", description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
 
         if notShowIfLoggedUser && (notShowingCondition?() ?? false) {
             completion(true)
@@ -112,7 +112,7 @@ public class AlertViewLibrary: UIView {
     }
 
     
-    func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {
+    public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {
         if !hideIndicatorBlockDesibled {
             let new = {
                 self.showAlert(buttons: buttons, title: title, description:description, type: type)
@@ -274,13 +274,13 @@ public class AlertViewLibrary: UIView {
         }
     }
 
-    func fastHide() {
+    public func fastHide() {
         fastHide { _ in
             
         }
     }
     
-    func fastHide(completionn: @escaping (Bool) -> ()) {
+    public func fastHide(completionn: @escaping (Bool) -> ()) {
         if !isShowing {
             completionn(false)
             return
