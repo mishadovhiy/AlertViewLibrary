@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension AlertView {
+extension AlertViewLibrary {
     func showAlertWithOK(title:String? = nil,text:String? = nil, error: Bool, okTitle:String = "OK", hidePressed:((Bool)->())? = nil) {
         let alertTitle = title ?? (error ? self.text.error : self.text.success)
         let okButton:button = .init(title: okTitle, style: error ? .error : .link, close: true, action: hidePressed)
@@ -24,7 +24,7 @@ extension AlertView {
     
 }
 
-extension AlertView {
+extension AlertViewLibrary {
 
     enum ViewType {
         /**

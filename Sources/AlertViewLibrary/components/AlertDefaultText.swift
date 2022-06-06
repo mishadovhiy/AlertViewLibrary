@@ -16,7 +16,7 @@ struct AlertDefaultText {
     let success = "Success"
 }
 
-extension AlertView {
+extension AlertViewLibrary {
     enum Image:String {
         case error = "warning"
         case succsess = "success"

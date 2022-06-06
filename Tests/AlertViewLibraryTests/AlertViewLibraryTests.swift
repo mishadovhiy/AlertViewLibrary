@@ -6,6 +6,11 @@ final class AlertViewLibraryTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(AlertViewLibrary().text, "Hello, World!")
+       // XCTAssertEqual(AlertViewLibrary().text, "Hello, World!")
+       // XCTAssertEqual(AlertViewLibrary().)
+        let alert = AlertViewLibrary()
+        alert.show { _ in
+            
+        }
     }
 }

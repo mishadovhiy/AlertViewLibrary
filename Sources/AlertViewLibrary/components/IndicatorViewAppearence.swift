@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension AlertView {
+extension AlertViewLibrary {
     func setBacground(higlight:Bool, ai:Bool) {
         DispatchQueue.main.async {
             let higlighten = {
