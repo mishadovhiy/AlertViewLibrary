@@ -17,7 +17,7 @@ struct AlertDefaultText {
 }
 
 extension AlertViewLibrary {
-    enum Image:String {
+    public enum Image:String {
         case error = "warning"
         case succsess = "success"
         case message = "vxc"
