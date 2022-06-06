@@ -38,7 +38,10 @@ public class AlertViewLibrary: UIView {
     private var anshowedAIS: [Any] = []
     private var rightFunc: (Any?, Bool)?
     private var leftFunc: (Any?, Bool)?
-    var hideIndicatorBlockDesibled = true
+    /**
+     - ai woudn't show when set so false
+     */
+    public var hideIndicatorBlockDesibled = true
     private var normalTitleSize: UIFont = .systemFont(ofSize: 0)
     private let errorFont = UIFont.systemFont(ofSize: 32, weight: .bold)
     
