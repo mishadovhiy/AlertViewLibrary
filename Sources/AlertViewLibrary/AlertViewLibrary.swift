@@ -331,7 +331,7 @@ public class AlertViewLibrary: UIView {
 
 
     public class func instanceFromNib() -> UIView {
-        return UINib(nibName: "AlertViewLibrary", bundle: Bundle.module).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        return UINib(nibName: "AlertView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 
     override init(frame: CGRect) {
