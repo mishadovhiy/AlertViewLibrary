@@ -24,9 +24,9 @@ extension AlertViewLibrary {
     
 }
 
-extension AlertViewLibrary {
+public extension AlertViewLibrary {
 
-     public enum ViewType {
+    enum ViewType {
         /**
          - higligting background
          */
@@ -46,13 +46,13 @@ extension AlertViewLibrary {
     
     
     
-    public struct button {
+    struct button {
         let title: String
         var style: ButtonType
         var close: Bool = true
         let action: ((Bool) -> ())?
     }
-    public enum ButtonType {
+    enum ButtonType {
         case error
         case regular
         case link
