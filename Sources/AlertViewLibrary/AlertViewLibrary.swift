@@ -330,8 +330,16 @@ public class AlertViewLibrary: UIView {
     }
 
 
-    public class func instanceFromNib() -> UIView {
-        return UINib(nibName: "AlertView", bundle: Bundle.main).instantiate(withOwner: nil, options: nil)[0] as! UIView
+    public class func instanceFromNib() -> AlertViewLibrary {
+        //return UINib(nibName: "AlertView", bundle: Bundle.main).instantiate(withOwner: nil, options: nil)[0] as! AlertViewLibrary
+        if let result = UINib(nibName: "AlertView", bundle: Bundle.main).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary {
+            return result
+        } else {
+            print("error adding")
+            let window = UIApplication.shared.keyWindow ?? UIWindow()
+            let view = AlertViewLibrary(frame: window.frame)
+            return view
+        }
     }
 
     override init(frame: CGRect) {
