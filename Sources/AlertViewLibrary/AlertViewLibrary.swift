@@ -332,7 +332,7 @@ public class AlertViewLibrary: UIView {
 
     public class func instanceFromNib() -> AlertViewLibrary {
         //return UINib(nibName: "AlertView", bundle: Bundle.main).instantiate(withOwner: nil, options: nil)[0] as! AlertViewLibrary
-        if let result = UINib(nibName: "AlertView", bundle: Bundle.main).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary
+        if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary
         {
             return result
         } else {
