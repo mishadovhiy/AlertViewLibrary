@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "AlertViewLibrary",
+    defaultLocalization: "en",
     platforms: [
         .macOS(.v10_15), .iOS(.v11)
     ],
@@ -23,10 +24,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "AlertViewLibrary",
-            dependencies: [],
-            resources: [
-                .process("AlertView.xib")
-            ]
+            dependencies: []
         ),
         .testTarget(
             name: "AlertViewLibraryTests",
