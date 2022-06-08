@@ -115,7 +115,7 @@ public class AlertViewLibrary: UIView {
     }
 
     
-    public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {
+    public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {//uiimage indeed Image
         if !hideIndicatorBlockDesibled {
             let new = {
                 self.showAlert(buttons: buttons, title: title, description:description, type: type)
