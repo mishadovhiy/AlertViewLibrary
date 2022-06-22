@@ -103,9 +103,9 @@ extension CALayer {
     
     
     func shadow() {
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = 16
-        self.layer.shadowOpacity = 0.6
+        self.shadowColor = UIColor.black.cgColor
+        self.shadowOffset = .zero
+        self.shadowRadius = 16
+        self.shadowOpacity = 0.6
     }
 }
