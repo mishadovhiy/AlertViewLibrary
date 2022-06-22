@@ -20,13 +20,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r67-rA-mCC" customClass="View" customModule="Budget_Tracker" customModuleProvider="target">
-                            <rect key="frame" x="69.5" y="389.5" width="275" height="117.5"/>
+                            <rect key="frame" x="69.5" y="364.5" width="275" height="167.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pCz-i8-dc5">
-                                    <rect key="frame" x="5" y="20" width="265" height="92.5"/>
+                                    <rect key="frame" x="5" y="20" width="265" height="142.5"/>
                                     <subviews>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-Nc-t6Q">
-                                            <rect key="frame" x="10" y="0.0" width="245" height="80"/>
+                                            <rect key="frame" x="10" y="-80" width="245" height="80"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="F3A-uB-eiN">
                                                     <rect key="frame" x="92.5" y="10" width="60" height="60"/>
@@ -96,61 +96,40 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </stackView>
-                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Sn-OI-hWw">
-                                            <rect key="frame" x="-5" y="0.0" width="275" height="41"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Sn-OI-hWw">
+                                            <rect key="frame" x="12.5" y="112.5" width="240" height="30"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontalBorder" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-fC-v1U">
-                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="1"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="sd4-k7-4Fh"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-Jy-un0">
-                                                    <rect key="frame" x="0.0" y="6" width="275" height="35"/>
-                                                    <subviews>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-yj-Awy">
-                                                            <rect key="frame" x="0.0" y="2.5" width="136.5" height="30"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                            <color key="tintColor" systemColor="systemRedColor"/>
-                                                            <state key="normal" title="Sing in">
-                                                                <color key="titleColor" systemColor="systemRedColor"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="buttonPress:" destination="tpT-tM-Tey" eventType="touchUpInside" id="JOJ-fc-LUm"/>
-                                                            </connections>
-                                                        </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalBorder" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-W1-JLc">
-                                                            <rect key="frame" x="136.5" y="0.0" width="2" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="35" id="NJf-tM-IPL"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-5S-3G8">
-                                                            <rect key="frame" x="138.5" y="2.5" width="136.5" height="30"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                            <color key="tintColor" systemColor="tintColor"/>
-                                                            <state key="normal" title="Cancel">
-                                                                <color key="titleColor" systemColor="tintColor"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="buttonPress:" destination="tpT-tM-Tey" eventType="touchUpInside" id="fHk-Vq-UgB"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-yj-Awy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="eu5-5S-3G8" firstAttribute="width" secondItem="m6c-yj-Awy" secondAttribute="width" id="7Hy-Kk-TwN"/>
-                                                        <constraint firstAttribute="height" constant="35" id="IKz-kx-O9N"/>
-                                                    </constraints>
-                                                </stackView>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="tintColor" systemColor="systemRedColor"/>
+                                                    <state key="normal" title="Sing in">
+                                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonPress:" destination="tpT-tM-Tey" eventType="touchUpInside" id="JOJ-fc-LUm"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-5S-3G8">
+                                                    <rect key="frame" x="122.5" y="0.0" width="117.5" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="tintColor" systemColor="tintColor"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" systemColor="tintColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonPress:" destination="tpT-tM-Tey" eventType="touchUpInside" id="fHk-Vq-UgB"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="sZS-9g-h5R"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="7Sn-OI-hWw" secondAttribute="trailing" constant="-5" id="11H-eI-nzl"/>
-                                        <constraint firstItem="7Sn-OI-hWw" firstAttribute="leading" secondItem="pCz-i8-dc5" secondAttribute="leading" constant="-5" id="9x9-fz-qhb"/>
                                         <constraint firstAttribute="trailing" secondItem="Lce-54-1f3" secondAttribute="trailing" constant="10" id="Dmq-NR-fnB"/>
                                         <constraint firstItem="Lce-54-1f3" firstAttribute="leading" secondItem="pCz-i8-dc5" secondAttribute="leading" constant="10" id="Ici-Ep-G0V"/>
                                     </constraints>
@@ -195,7 +174,6 @@
                 <outlet property="ai" destination="isi-LQ-ATr" id="pT6-NA-kis"/>
                 <outlet property="aiSuperView" destination="Xin-gj-jUW" id="DXt-81-r13"/>
                 <outlet property="backgroundView" destination="cLP-OF-dNc" id="RNF-q0-RqX"/>
-                <outlet property="buttonsSeparetorImage" destination="CdY-W1-JLc" id="QCF-WV-P1C"/>
                 <outlet property="descriptionLabel" destination="WiV-Qt-Oy6" id="Vxh-KQ-7Ej"/>
                 <outlet property="imageView" destination="F3A-uB-eiN" id="hQJ-G2-7kV"/>
                 <outlet property="leftButton" destination="eu5-5S-3G8" id="u2o-rP-D2P"/>
@@ -207,8 +185,6 @@
         </view>
     </objects>
     <resources>
-        <image name="horizontalBorder" width="270" height="1"/>
-        <image name="verticalBorder" width="2" height="44"/>
         <image name="warning" width="511.99899291992188" height="511.99899291992188"/>
         <namedColor name="CategoryColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
