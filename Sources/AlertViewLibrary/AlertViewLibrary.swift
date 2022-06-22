@@ -6,7 +6,7 @@ public protocol AlertViewProtocol {
 }
 
 public class AlertViewLibrary: UIView {
-    var delegate:AlertViewProtocol?
+    public var delegate:AlertViewProtocol?
     lazy var appearence = AIAppearence(text: .init(), colors: .init())
     
     @IBOutlet private weak var actionsStack: UIStackView!
