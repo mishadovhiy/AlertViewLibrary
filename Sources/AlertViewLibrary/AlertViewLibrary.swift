@@ -1,16 +1,13 @@
 import UIKit
 
-protocol AlertViewProtocol {
+public protocol AlertViewProtocol {
     func alertViewWillAppear()
     func alertViewDidDisappear()
 }
 
 public class AlertViewLibrary: UIView {
     var delegate:AlertViewProtocol?
-
     lazy var appearence = AIAppearence(text: .init(), colors: .init())
-    
-    var appDelegate:UIApplicationDelegate?
     
     @IBOutlet private weak var actionsStack: UIStackView!
     @IBOutlet weak var backgroundView: UIView!
@@ -47,7 +44,7 @@ public class AlertViewLibrary: UIView {
 
     var notShowingCondition:(() -> (Bool))?
     
-    public func show(title: String? = "Loading", description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
+    public func show(title: String? = nil, description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
 
         if notShowIfLoggedUser && (notShowingCondition?() ?? false) {
             completion(true)
@@ -62,6 +59,7 @@ public class AlertViewLibrary: UIView {
             self.isShowing = true
         }
         self.canCloseOnSwipe = false
+            //let resultTitle = title ?? self.appearence.text.loading
         let hideTitle = title == nil ? true : false
         let hideDescription = (description == "" || description == nil) ? true : false
         self.setBacground(higlight: false, ai: true)
