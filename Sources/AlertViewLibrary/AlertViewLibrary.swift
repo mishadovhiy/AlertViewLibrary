@@ -24,7 +24,7 @@ public class AlertViewLibrary: UIView {
     
     private var canCloseOnSwipe = false
     public var isShowing = false
-
+    
     private var anshowedAIS: [Any] = []
     private var rightFunc: (Any?, Bool)?
     private var leftFunc: (Any?, Bool)?
@@ -36,78 +36,74 @@ public class AlertViewLibrary: UIView {
     private let errorFont = UIFont.systemFont(ofSize: 32, weight: .bold)
     
     public override func draw(_ rect: CGRect) {
-        print(#function, " draw alert view lib")
         self.normalTitleSize = self.titleLabel.font
         self.titleLabel.textColor = appearence.colors.texts.title
         self.descriptionLabel.textColor = appearence.colors.texts.description
     }
-
+    
     var notShowingCondition:(() -> (Bool))?
     
     public func show(title: String? = nil, description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
-
+        
         if notShowIfLoggedUser && (notShowingCondition?() ?? false) {
             completion(true)
             return
         }
         DispatchQueue.init(label: "\(#function)", qos: .userInteractive).async {
             if !self.hideIndicatorBlockDesibled {
-            print("block")
-            return
-        }
-        if !self.isShowing {
-            self.isShowing = true
-        }
-        self.canCloseOnSwipe = false
-            //let resultTitle = title ?? self.appearence.text.loading
-        let hideTitle = title == nil ? true : false
-        let hideDescription = (description == "" || description == nil) ? true : false
-        self.setBacground(higlight: false, ai: true)
+                return
+            }
+            if !self.isShowing {
+                self.isShowing = true
+            }
+            self.canCloseOnSwipe = false
+            let hideTitle = title == nil ? true : false
+            let hideDescription = (description == "" || description == nil) ? true : false
+            self.setBacground(higlight: false, ai: true)
             DispatchQueue.main.sync {
                 let window = UIApplication.shared.keyWindow ?? UIWindow()
-                //keyWindow ?? UIWindow()
-            self.frame = window.frame
-            window.addSubview(self)
-            if self.imageView.superview?.isHidden != true {
-                self.imageView.superview?.isHidden = true
-            }
-            self.alpha = 1
-            self.backgroundView.alpha = 1
-            if self.isHidden {
-                self.isHidden = false
-            }
-            self.titleLabel.text = title
-            self.descriptionLabel.text = description
-            self.backgroundView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
-            if !self.actionsStack.isHidden {
-                self.actionsStack.isHidden = true
-            }
-            self.ai.startAnimating()
+                self.frame = window.frame
+                window.addSubview(self)
+                if self.imageView.superview?.isHidden != true {
+                    self.imageView.superview?.isHidden = true
+                }
+                self.alpha = 1
+                self.backgroundView.alpha = 1
+                if self.isHidden {
+                    self.isHidden = false
+                }
+                self.titleLabel.text = title
+                self.descriptionLabel.text = description
+                self.backgroundView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
+                if !self.actionsStack.isHidden {
+                    self.actionsStack.isHidden = true
+                }
+                self.ai.startAnimating()
                 UIView.animate(withDuration: appeareAnimation ? 0.25 : 0.1) {
                     self.mainView.backgroundColor = self.self.appearence.colors.normal.view
-                if self.titleLabel.isHidden != hideTitle {
-                    self.titleLabel.isHidden = hideTitle
-                }
-                if self.descriptionLabel.isHidden != hideDescription {
-                    self.descriptionLabel.isHidden = hideDescription
-                }
-                if self.aiSuperView.isHidden {
-                    self.aiSuperView.isHidden = false
+                    if self.titleLabel.isHidden != hideTitle {
+                        self.titleLabel.isHidden = hideTitle
+                    }
+                    if self.descriptionLabel.isHidden != hideDescription {
+                        self.descriptionLabel.isHidden = hideDescription
+                    }
+                    if self.aiSuperView.isHidden {
+                        self.aiSuperView.isHidden = false
+                    }
+                    
+                } completion: { (_) in
+                    UIView.animate(withDuration: 0.15) {
+                        self.mainView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
+                    } completion: { (_) in
+                        self.aiSuperView.layoutIfNeeded()
+                        completion(true)
+                    }
                 }
                 
-            } completion: { (_) in
-                UIView.animate(withDuration: 0.15) {
-                    self.mainView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
-                } completion: { (_) in
-                        self.aiSuperView.layoutIfNeeded()
-                    completion(true)
-                }
-            }
-
             }
         }
     }
-
+    
     
     public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:UIImage? = nil) {
         if !hideIndicatorBlockDesibled {
@@ -118,75 +114,74 @@ public class AlertViewLibrary: UIView {
             return
         } else {
             
-        
-        let hideDescription = type == .internetError ? false : ((description == nil || description == "") ? true : false)
-        let hideButtonSeparetor = buttons.1 == nil ? true : false
-        DispatchQueue.init(label: "showAlert", qos: .userInteractive).async {
-            self.hideIndicatorBlockDesibled = false
-            self.leftFunc = (buttons.0.action, buttons.0.close)
-            self.checkIfShowing(title: title ?? "", isBlack: false) { _ in
-                let needHiglight = type == .error || type == .internetError
-                self.setBacground(higlight: needHiglight, ai: false)
-                self.buttonStyle(self.leftButton, type: buttons.0)
-                if let right = buttons.1 {
-                    self.rightFunc = (right.action, right.close)
-                    self.buttonStyle(self.rightButton, type: right)
-                }
-        DispatchQueue.main.async {
-            if buttons.1 == nil {
-                if self.rightButton.isHidden != true {
-                    self.rightButton.isHidden = true
-                }
-            }
-            if self.buttonsSeparetorImage.isHidden != hideButtonSeparetor {
-                self.buttonsSeparetorImage.isHidden = hideButtonSeparetor
-            }
-
-            if type == .error {
-                UIImpactFeedbackGenerator().impactOccurred()
-            }
-            self.titleLabel.text = type == .internetError ? self.appearence.text.internetError.title : title
-            self.descriptionLabel.text = type == .internetError ? self.appearence.text.internetError.description : description
-            let mailImage = image ?? self.getAlertImage(image: image, type: type)
-                UIView.animate(withDuration: 0.20) {
-                    self.mainView.backgroundColor = self.appearence.colors.accent.view
-                    
-                    if self.titleLabel.isHidden != false {
-                        self.titleLabel.isHidden = false
+            
+            let hideDescription = type == .internetError ? false : ((description == nil || description == "") ? true : false)
+            let hideButtonSeparetor = buttons.1 == nil ? true : false
+            DispatchQueue.init(label: "showAlert", qos: .userInteractive).async {
+                self.hideIndicatorBlockDesibled = false
+                self.leftFunc = (buttons.0.action, buttons.0.close)
+                self.checkIfShowing(title: title ?? "", isBlack: false) { _ in
+                    let needHiglight = type == .error || type == .internetError
+                    self.setBacground(higlight: needHiglight, ai: false)
+                    self.buttonStyle(self.leftButton, type: buttons.0)
+                    if let right = buttons.1 {
+                        self.rightFunc = (right.action, right.close)
+                        self.buttonStyle(self.rightButton, type: right)
                     }
-                    if self.descriptionLabel.isHidden != hideDescription {
-                        self.descriptionLabel.isHidden = hideDescription
-                    }
-                    if self.leftButton.superview?.superview?.isHidden != false {
-                        self.leftButton.superview?.superview?.isHidden = false
-                    }
-                    if !self.aiSuperView.isHidden {
-                        self.aiSuperView.isHidden = true
-                    }
-                    if let image = mailImage {
-                        self.imageView.image = image
-                        self.imageView.superview?.isHidden = false
-                    } else {
-                        if self.imageView.superview?.isHidden != true {
-                            self.imageView.superview?.isHidden = true
+                    DispatchQueue.main.async {
+                        if buttons.1 == nil {
+                            if self.rightButton.isHidden != true {
+                                self.rightButton.isHidden = true
+                            }
+                        }
+                        if self.buttonsSeparetorImage.isHidden != hideButtonSeparetor {
+                            self.buttonsSeparetorImage.isHidden = hideButtonSeparetor
+                        }
+                        
+                        if type == .error {
+                            UIImpactFeedbackGenerator().impactOccurred()
+                        }
+                        self.titleLabel.text = type == .internetError ? self.appearence.text.internetError.title : title
+                        self.descriptionLabel.text = type == .internetError ? self.appearence.text.internetError.description : description
+                        let mailImage = image ?? self.getAlertImage(image: image, type: type)
+                        UIView.animate(withDuration: 0.20) {
+                            self.mainView.backgroundColor = self.appearence.colors.accent.view
+                            
+                            if self.titleLabel.isHidden != false {
+                                self.titleLabel.isHidden = false
+                            }
+                            if self.descriptionLabel.isHidden != hideDescription {
+                                self.descriptionLabel.isHidden = hideDescription
+                            }
+                            if self.leftButton.superview?.superview?.isHidden != false {
+                                self.leftButton.superview?.superview?.isHidden = false
+                            }
+                            if !self.aiSuperView.isHidden {
+                                self.aiSuperView.isHidden = true
+                            }
+                            if let image = mailImage {
+                                self.imageView.image = image
+                                self.imageView.superview?.isHidden = false
+                            } else {
+                                if self.imageView.superview?.isHidden != true {
+                                    self.imageView.superview?.isHidden = true
+                                }
+                            }
                         }
                     }
+                    
                 }
             }
-                
-            }
-        }
         }
     }
-
-
     
-
     
-
+    
+    
+    
+    
     private func checkIfShowing(title: String, isBlack: Bool, showed: @escaping (Bool) -> ()) {
         if !isShowing {
-            print("NOT SHOWINGG")
             isShowing = true
             DispatchQueue.main.async {
                 let window = UIApplication.shared.keyWindow ?? UIWindow()
@@ -208,7 +203,7 @@ public class AlertViewLibrary: UIView {
                     self.titleLabel.isHidden = false
                 }
                 
-            self.backgroundView.backgroundColor = .clear
+                self.backgroundView.backgroundColor = .clear
                 if self.mainView.isHidden != false {
                     self.mainView.isHidden = false
                 }
@@ -219,18 +214,16 @@ public class AlertViewLibrary: UIView {
                     if let delegate = self.delegate {
                         delegate.alertViewWillAppear()
                     }
-                    /*self.bannerBackgroundWas = AppDelegate.shared?.banner.clearBackground ?? true
-                    AppDelegate.shared?.banner.setBackground(clear: true)*/
                     showed(true)
                 }
-
+                
             }
         } else {
             showed(true)
         }
     }
     
-
+    
     
     @IBAction private func closePressed(_ sender: UIButton) {
         fastHide()
@@ -240,7 +233,6 @@ public class AlertViewLibrary: UIView {
         hideIndicatorBlockDesibled = true
         switch sender.tag {
         case 0:
-            print("leftButtonPress")
             if let function = leftFunc?.0 as? (Bool) -> () {
                 if leftFunc?.1 == true {
                     fastHide { _ in
@@ -255,7 +247,6 @@ public class AlertViewLibrary: UIView {
                 fastHide()
             }
         case 1:
-            print("rightButtonPress")
             if let function = rightFunc?.0 as? (Bool) -> () {
                 if rightFunc?.1 == true {
                     fastHide { (_) in
@@ -273,7 +264,7 @@ public class AlertViewLibrary: UIView {
             break
         }
     }
-
+    
     public func fastHide() {
         fastHide { _ in
             
@@ -303,14 +294,17 @@ public class AlertViewLibrary: UIView {
                     self.removeFromSuperview()
                     self.setAllHidden()
                     completionn(true)
-                    self.checkUnshowed()
+                    
                     if let delegate = self.delegate {
                         delegate.alertViewDidDisappear()
                     }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        self.checkUnshowed()
+                    }
                     /*
                      if let b = self.bannerBackgroundWas {
-                         self.bannerBackgroundWas = nil
-                         AppDelegate.shared?.banner.setBackground(clear: b)
+                     self.bannerBackgroundWas = nil
+                     AppDelegate.shared?.banner.setBackground(clear: b)
                      }
                      */
                 }
@@ -325,9 +319,9 @@ public class AlertViewLibrary: UIView {
             function()
         }
     }
-
-
-
+    
+    
+    
     
     public class func instanceFromNib(_ appearence:AIAppearence?) -> AlertViewLibrary {
         if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary
@@ -337,20 +331,19 @@ public class AlertViewLibrary: UIView {
             }
             return result
         } else {
-            print("error adding")
             let window = UIApplication.shared.keyWindow ?? UIWindow()
             let view = AlertViewLibrary(frame: window.frame)
             return view
         }
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if canCloseOnSwipe {//if touches != view
             canCloseOnSwipe = false
@@ -358,7 +351,7 @@ public class AlertViewLibrary: UIView {
         }
     }
     
-
+    
     public func setAllHidden() {//mainthread
         canCloseOnSwipe = false
         isShowing = false
