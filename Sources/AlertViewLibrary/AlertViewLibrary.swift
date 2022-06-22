@@ -43,6 +43,10 @@ public class AlertViewLibrary: UIView {
             self.layer.zPosition = zPoz
         }
         
+        mainView.layer.masksToBounds = true
+        mainView.layer.cornerRadius = 12
+        mainView.layer.shadow()
+        
         let actionStackFrame = actionsStack.layer.frame
         actionsStack.layer.drawLine([
             .init(x: 0, y: 0), .init(x: actionStackFrame.width, y: 0)

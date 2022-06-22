@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLP-OF-dNc" userLabel="backgroundView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r67-rA-mCC" customClass="View" customModule="Budget_Tracker" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r67-rA-mCC">
                             <rect key="frame" x="69.5" y="357" width="275" height="182.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pCz-i8-dc5">
@@ -145,14 +145,6 @@
                                 <constraint firstAttribute="trailing" secondItem="pCz-i8-dc5" secondAttribute="trailing" constant="5" id="lkQ-9w-fZm"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="vDD-x3-IoV"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="9"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpasity">
-                                    <real key="value" value="0.90000000000000002"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -100,4 +100,12 @@ extension CALayer {
         }
         return linePath
     }
+    
+    
+    func shadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 16
+        self.layer.shadowOpacity = 0.6
+    }
 }
