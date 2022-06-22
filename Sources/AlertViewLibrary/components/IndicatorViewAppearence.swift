@@ -11,17 +11,18 @@ import UIKit
 
 extension AlertViewLibrary {
     func setBacground(higlight:Bool, ai:Bool) {
+        
         DispatchQueue.main.async {
             let higlighten = {
                 UIView.animate(withDuration: 0.3) {
-                    self.backgroundView.backgroundColor = ai ? self.normalBackgroundColor : self.accentBackgroundColor
+                    self.backgroundView.backgroundColor = ai ? self.appearence.colors.normal.background : self.appearence.colors.accent.background
                 }
             }
             if higlight {
                 UIView.animate(withDuration: 0.3) {
                     self.mainView.layer.shadowOpacity = 0.9
                     self.titleLabel.font = .systemFont(ofSize: 32, weight: .bold)
-                    self.backgroundView.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.8)
+                    self.backgroundView.backgroundColor = self.appearence.colors.accent.higlight
                 } completion: { _ in
                     higlighten()
                 }
@@ -48,23 +49,26 @@ extension AlertViewLibrary {
     private func buttonToColor(_ type:ButtonType) -> UIColor {
         switch type {
         case .error: return .red
-        case .link: return linkColor
-        case .regular: return regularColor
+        case .link: return appearence.colors.buttom.link
+        case .regular: return appearence.colors.buttom.normal
         }
     }
     
-    func getAlertImage(image:Image?, type:ViewType) -> UIImage? {
+    func getAlertImage(image:UIImage?, type:ViewType) -> UIImage? {
         if let image = image {
-            return .init(named: image.rawValue)
+            return image
         } else {
-            let error:UIImage? = (type == .error || type == .internetError) ? imageNamed(Image.error.rawValue) : nil
-            let scs:UIImage? = (type == .succsess) ? imageNamed(Image.succsess.rawValue) : nil
-            return error ?? (scs ?? nil)
+            if type == .error || type == .internetError {
+                return .init(named: "warning", in: Bundle.module, compatibleWith: nil)
+            } else {
+                if type == .succsess {
+                    return .init(named: "success", in: Bundle.module, compatibleWith: nil)
+                }
+            }
+                                                   
         }
+        return nil
     }
-    
-    private func imageNamed(_ named:String) -> UIImage? {
-        return .init(named: named, in: Bundle.module, compatibleWith: nil)
-    }
+
     
 }

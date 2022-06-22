@@ -9,16 +9,17 @@
 import UIKit
 
 extension AlertViewLibrary {
-    public func showAlertWithOK(title:String? = nil,text:String? = nil, error: Bool, okTitle:String = "OK", hidePressed:((Bool)->())? = nil) {
-        let alertTitle = title ?? (error ? self.text.error : self.text.success)
+    public func showAlertWithOK(title:String? = nil,text:String? = nil, error: Bool, image:UIImage? = nil, okTitle:String = "OK", hidePressed:((Bool)->())? = nil) {
+
+        let alertTitle = title ?? (error ? self.appearence.text.error : self.appearence.text.success)
         let okButton:button = .init(title: okTitle, style: error ? .error : .link, close: true, action: hidePressed)
         DispatchQueue.main.async {
-            self.showAlert(buttons: (okButton, nil), title: alertTitle, description: text, type: error ? .error : .standard)
+            self.showAlert(buttons: (okButton, nil), title: alertTitle, description: text, type: error ? .error : .standard, image: image)
         }
     }
     
     public func prebuild_closeButton(title:String? = nil, style:ButtonType = .regular) -> button {
-        let titleText = title ?? self.text.done
+        let titleText = title ?? self.appearence.text.done
         return .init(title: titleText, style: style, close: true) { _ in }
     }
     

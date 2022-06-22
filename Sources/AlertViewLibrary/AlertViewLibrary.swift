@@ -7,15 +7,8 @@ protocol AlertViewProtocol {
 
 public class AlertViewLibrary: UIView {
     var delegate:AlertViewProtocol?
-    let text = AlertDefaultText()
-    
-    let accentBackgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60)
-    let normalBackgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.19)
-    
-    private let mainViewLightColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.65)
-    private let mainViewDarkColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 0.85)
-    let linkColor:UIColor = .systemBlue
-    let regularColor:UIColor = .white
+
+    lazy var appearence = Appearence()
     
     var appDelegate:UIApplicationDelegate?
     
@@ -46,7 +39,10 @@ public class AlertViewLibrary: UIView {
     private let errorFont = UIFont.systemFont(ofSize: 32, weight: .bold)
     
     public override func draw(_ rect: CGRect) {
+        print(#function, " draw alert view lib")
         self.normalTitleSize = self.titleLabel.font
+        self.titleLabel.textColor = appearence.colors.texts.title
+        self.descriptionLabel.textColor = appearence.colors.texts.description
     }
 
     var notShowingCondition:(() -> (Bool))?
@@ -90,7 +86,7 @@ public class AlertViewLibrary: UIView {
             }
             self.ai.startAnimating()
                 UIView.animate(withDuration: appeareAnimation ? 0.25 : 0.1) {
-                self.mainView.backgroundColor = self.mainViewLightColor
+                self.mainView.backgroundColor = self.self.appearence.colors.normal.background
                 if self.titleLabel.isHidden != hideTitle {
                     self.titleLabel.isHidden = hideTitle
                 }
@@ -115,7 +111,7 @@ public class AlertViewLibrary: UIView {
     }
 
     
-    public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:Image? = nil) {//uiimage indeed Image
+    public func showAlert(buttons: (button, button?), title: String? = "Done", description: String? = nil, type: ViewType = .standard, image:UIImage? = nil) {
         if !hideIndicatorBlockDesibled {
             let new = {
                 self.showAlert(buttons: buttons, title: title, description:description, type: type)
@@ -149,11 +145,11 @@ public class AlertViewLibrary: UIView {
             if type == .error {
                 UIImpactFeedbackGenerator().impactOccurred()
             }
-            self.titleLabel.text = type == .internetError ? self.text.internetError.title : title
-            self.descriptionLabel.text = type == .internetError ? self.text.internetError.description : description
+            self.titleLabel.text = type == .internetError ? self.appearence.text.internetError.title : title
+            self.descriptionLabel.text = type == .internetError ? self.appearence.text.internetError.description : description
             let mailImage = self.getAlertImage(image: image, type: type)
                 UIView.animate(withDuration: 0.20) {
-                    self.mainView.backgroundColor = self.mainViewDarkColor
+                    self.mainView.backgroundColor = self.appearence.colors.accent.background
                     
                     if self.titleLabel.isHidden != false {
                         self.titleLabel.isHidden = false
@@ -330,9 +326,12 @@ public class AlertViewLibrary: UIView {
     }
 
 
-    public class func instanceFromNib() -> AlertViewLibrary {
+
+    
+    public class func instanceFromNib(_ appearence:Appearence?) -> AlertViewLibrary {
         if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary
         {
+            result.appearence = appearence ?? .init()
             return result
         } else {
             print("error adding")
