@@ -49,7 +49,7 @@ public class AlertViewLibrary: UIView {
         
         let actionStackFrame = actionsStack.layer.frame
         actionsStack.layer.drawLine([
-            .init(x: -10, y: 0), .init(x: actionStackFrame.width + 20, y: 0)
+            .init(x: -15, y: 0), .init(x: actionStackFrame.width + 30, y: 0)
         ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
         
         separetor = actionsStack.layer.createLine([
