@@ -44,7 +44,7 @@ public class AlertViewLibrary: UIView {
         }
     }
     
-    var notShowingCondition:(() -> (Bool))?
+    public var notShowingCondition:(() -> (Bool))?
     
     public func show(title: String? = nil, description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
         
