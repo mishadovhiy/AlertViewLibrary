@@ -20,10 +20,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r67-rA-mCC" customClass="View" customModule="Budget_Tracker" customModuleProvider="target">
-                            <rect key="frame" x="69.5" y="364.5" width="275" height="167.5"/>
+                            <rect key="frame" x="69.5" y="357" width="275" height="182.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pCz-i8-dc5">
-                                    <rect key="frame" x="5" y="20" width="265" height="142.5"/>
+                                    <rect key="frame" x="5" y="20" width="265" height="157.5"/>
                                     <subviews>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-Nc-t6Q">
                                             <rect key="frame" x="10" y="-80" width="245" height="80"/>
@@ -97,10 +97,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Sn-OI-hWw">
-                                            <rect key="frame" x="12.5" y="112.5" width="240" height="30"/>
+                                            <rect key="frame" x="12.5" y="112.5" width="240" height="45"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-yj-Awy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="117.5" height="45"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="tintColor" systemColor="systemRedColor"/>
@@ -112,7 +112,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-5S-3G8">
-                                                    <rect key="frame" x="122.5" y="0.0" width="117.5" height="30"/>
+                                                    <rect key="frame" x="122.5" y="0.0" width="117.5" height="45"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="tintColor" systemColor="tintColor"/>
@@ -125,6 +125,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="Twr-GM-8UF"/>
                                                 <constraint firstAttribute="width" constant="240" id="sZS-9g-h5R"/>
                                             </constraints>
                                         </stackView>
