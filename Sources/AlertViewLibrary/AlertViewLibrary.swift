@@ -49,12 +49,12 @@ public class AlertViewLibrary: UIView {
         
         let actionStackFrame = actionsStack.layer.frame
         actionsStack.layer.drawLine([
-            .init(x: 0, y: 0), .init(x: actionStackFrame.width, y: 0)
-        ], color: appearence.colors.separetor, width: 0.3, opacity: 1)
+            .init(x: -10, y: 0), .init(x: actionStackFrame.width + 20, y: 0)
+        ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
         
         separetor = actionsStack.layer.createLine([
-            .init(x: actionStackFrame.width / 2, y: 2), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height - 4)
-        ], color: appearence.colors.separetor, width: 0.3, opacity: 1)
+            .init(x: actionStackFrame.width / 2, y: 0), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height + 5)
+        ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
     }
     private var separetor:CALayer?
     public var notShowingCondition:(() -> (Bool))?
