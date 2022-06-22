@@ -12,6 +12,7 @@ public struct AIAppearence {
     let text:Text
     let colors:Colors
     
+    public var zPosition:CGFloat?
     
     public init(text:Text, colors:Colors) {
         self.text = text

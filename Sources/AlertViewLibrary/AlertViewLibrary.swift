@@ -39,6 +39,9 @@ public class AlertViewLibrary: UIView {
         self.normalTitleSize = self.titleLabel.font
         self.titleLabel.textColor = appearence.colors.texts.title
         self.descriptionLabel.textColor = appearence.colors.texts.description
+        if let zPoz = appearence.zPosition {
+            self.layer.zPosition = zPoz
+        }
     }
     
     var notShowingCondition:(() -> (Bool))?
