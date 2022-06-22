@@ -19,7 +19,7 @@ public class AlertViewLibrary: UIView {
     
     @IBOutlet private weak var aiSuperView: UIView!
     @IBOutlet private weak var ai: UIActivityIndicatorView!
-    @IBOutlet private weak var buttonsSeparetorImage: UIImageView!
+   // @IBOutlet private weak var buttonsSeparetorImage: UIImageView!
     @IBOutlet weak private var imageView: UIImageView!
     
     private var canCloseOnSwipe = false
@@ -48,11 +48,11 @@ public class AlertViewLibrary: UIView {
             .init(x: 0, y: 0), .init(x: actionStackFrame.width, y: 0)
         ], color: appearence.colors.separetor, width: 0.3, opacity: 1)
         
-        actionsStack.layer.drawLine([
+        separetor = actionsStack.layer.createLine([
             .init(x: actionStackFrame.width / 2, y: 2), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height - 4)
         ], color: appearence.colors.separetor, width: 0.3, opacity: 1)
     }
-    
+    private var separetor:CALayer?
     public var notShowingCondition:(() -> (Bool))?
     
     public func show(title: String? = nil, description: String? = nil, appeareAnimation: Bool = false, notShowIfLoggedUser:Bool = false, completion: @escaping (Bool) -> ()) {
@@ -146,8 +146,8 @@ public class AlertViewLibrary: UIView {
                                 self.rightButton.isHidden = true
                             }
                         }
-                        if self.buttonsSeparetorImage.isHidden != hideButtonSeparetor {
-                            self.buttonsSeparetorImage.isHidden = hideButtonSeparetor
+                        if (self.separetor?.isHidden ?? true) != hideButtonSeparetor {
+                            self.separetor?.isHidden = hideButtonSeparetor
                         }
                         
                         if type == .error {

@@ -74,7 +74,7 @@ public struct AIAppearence {
 
 
 extension CALayer {
-    func drawLine(_ lines:[CGPoint], color:UIColor, width:CGFloat = 0.5, opacity:Float = 0.2) {
+    func createLine(_ lines:[CGPoint], color:UIColor, width:CGFloat = 0.5, opacity:Float = 0.2) -> CAShapeLayer {
         let line = CAShapeLayer()
         line.path = createPath(lines).cgPath
         line.fillColor = nil
@@ -82,6 +82,11 @@ extension CALayer {
         line.lineWidth = width
         line.strokeColor = (color).cgColor
         self.addSublayer(line)
+        return line
+    }
+    
+    func drawLine(_ lines:[CGPoint], color:UIColor, width:CGFloat = 0.5, opacity:Float = 0.2) {
+        let _ = createLine(lines, color: color, width: width, opacity: opacity)
     }
     
     
