@@ -7,23 +7,8 @@
 
 import UIKit
 
-struct Text {
-    var loading:String
-    var done:String
-    var internetError:(title:String, description:String)
-    var error:String
-    var okButton:String
-    var success:String
-}
 
-struct Colors {
-    let accent:(background:UIColor, view:UIColor, higlight:UIColor)
-    let normal:(background:UIColor, view:UIColor)
-    let buttom:(link:UIColor, normal:UIColor)
-    let texts:(title:UIColor, description:UIColor)
-}
-
-public struct Appearence {
+public struct AIAppearence {
     let text:Text
     let colors:Colors
     
@@ -37,6 +22,21 @@ public struct Appearence {
         self.colors = colors ?? DefaultProperties.colors
     }
     
+    struct Text {
+        var loading:String
+        var done:String
+        var internetError:(title:String, description:String)
+        var error:String
+        var okButton:String
+        var success:String
+    }
+
+    struct Colors {
+        let accent:(background:UIColor, view:UIColor, higlight:UIColor)
+        let normal:(background:UIColor, view:UIColor)
+        let buttom:(link:UIColor, normal:UIColor)
+        let texts:(title:UIColor, description:UIColor)
+    }
     
     private struct DefaultProperties {
         static var colors:Colors {

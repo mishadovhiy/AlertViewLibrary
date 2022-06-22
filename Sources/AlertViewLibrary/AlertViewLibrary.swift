@@ -8,7 +8,7 @@ protocol AlertViewProtocol {
 public class AlertViewLibrary: UIView {
     var delegate:AlertViewProtocol?
 
-    lazy var appearence = Appearence()
+    lazy var appearence = AIAppearence()
     
     var appDelegate:UIApplicationDelegate?
     
@@ -328,7 +328,7 @@ public class AlertViewLibrary: UIView {
 
 
     
-    public class func instanceFromNib(_ appearence:Appearence?) -> AlertViewLibrary {
+    public class func instanceFromNib(_ appearence:AIAppearence?) -> AlertViewLibrary {
         if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary
         {
             result.appearence = appearence ?? .init()
