@@ -86,7 +86,7 @@ public class AlertViewLibrary: UIView {
             }
             self.ai.startAnimating()
                 UIView.animate(withDuration: appeareAnimation ? 0.25 : 0.1) {
-                self.mainView.backgroundColor = self.self.appearence.colors.normal.background
+                    self.mainView.backgroundColor = self.self.appearence.colors.normal.view
                 if self.titleLabel.isHidden != hideTitle {
                     self.titleLabel.isHidden = hideTitle
                 }
@@ -118,7 +118,9 @@ public class AlertViewLibrary: UIView {
             }
             self.anshowedAIS.append(new)
             return
-        }
+        } else {
+            
+        
         let hideDescription = type == .internetError ? false : ((description == nil || description == "") ? true : false)
         let hideButtonSeparetor = buttons.1 == nil ? true : false
         DispatchQueue.init(label: "showAlert", qos: .userInteractive).async {
@@ -149,7 +151,7 @@ public class AlertViewLibrary: UIView {
             self.descriptionLabel.text = type == .internetError ? self.appearence.text.internetError.description : description
             let mailImage = image ?? self.getAlertImage(image: image, type: type)
                 UIView.animate(withDuration: 0.20) {
-                    self.mainView.backgroundColor = self.appearence.colors.accent.background
+                    self.mainView.backgroundColor = self.appearence.colors.accent.view
                     
                     if self.titleLabel.isHidden != false {
                         self.titleLabel.isHidden = false
@@ -175,6 +177,7 @@ public class AlertViewLibrary: UIView {
             }
                 
             }
+        }
         }
     }
 
