@@ -63,11 +63,13 @@ extension AlertViewLibrary {
             } else {
                 if type == .succsess {
                     return .init(named: "success", in: Bundle.module, compatibleWith: nil)
+                } else {
+                    return nil
                 }
             }
                                                    
         }
-        return nil
+        
     }
 
     
