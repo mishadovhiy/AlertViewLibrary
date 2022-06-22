@@ -17,12 +17,12 @@ public struct AIAppearence {
         self.text = DefaultProperties.text
     }
     
-    init(text:Text? = nil, colors:Colors? = nil) {
+    public init(text:Text? = nil, colors:Colors? = nil) {
         self.text = text ?? DefaultProperties.text
         self.colors = colors ?? DefaultProperties.colors
     }
     
-    struct Text {
+    public struct Text {
         var loading:String
         var done:String
         var internetError:(title:String, description:String)
@@ -31,7 +31,7 @@ public struct AIAppearence {
         var success:String
     }
 
-    struct Colors {
+    public struct Colors {
         let accent:(background:UIColor, view:UIColor, higlight:UIColor)
         let normal:(background:UIColor, view:UIColor)
         let buttom:(link:UIColor, normal:UIColor)
