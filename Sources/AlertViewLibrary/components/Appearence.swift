@@ -41,11 +41,12 @@ public struct AIAppearence {
         var normal:(background:UIColor, view:UIColor)
         var buttom:(link:UIColor, normal:UIColor)
         var texts:(title:UIColor, description:UIColor)
-        
+        var separetor:UIColor
         public init(accent:(background:UIColor, view:UIColor, higlight:UIColor)? = nil,
                     normal:(background:UIColor, view:UIColor)? = nil,
                     buttom:(link:UIColor, normal:UIColor)? = nil,
-                    texts:(title:UIColor, description:UIColor)? = nil
+                    texts:(title:UIColor, description:UIColor)? = nil,
+                    separetor:UIColor = .systemGray
         ) {
             
 
@@ -62,6 +63,7 @@ public struct AIAppearence {
             self.normal = normal ?? defNormal
             self.buttom = buttom ?? defButtom
             self.texts = texts ?? defTexts
+            self.separetor = separetor
         }
     }
     
@@ -71,3 +73,26 @@ public struct AIAppearence {
 
 
 
+extension CALayer {
+    func drawLine(_ lines:[CGPoint], color:UIColor, width:CGFloat = 0.5, opacity:Float = 0.2) {
+        let line = CAShapeLayer()
+        line.path = createPath(lines).cgPath
+        line.fillColor = nil
+        line.opacity = opacity
+        line.lineWidth = width
+        line.strokeColor = (color).cgColor
+        self.addSublayer(line)
+    }
+    
+    
+    private func createPath(_ lines:[CGPoint]) -> UIBezierPath {
+        let linePath = UIBezierPath()
+        var liness = lines
+        linePath.move(to: liness.first!)
+        liness.removeFirst()
+        liness.forEach { line in
+            linePath.addLine(to: line)
+        }
+        return linePath
+    }
+}

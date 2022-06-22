@@ -42,6 +42,15 @@ public class AlertViewLibrary: UIView {
         if let zPoz = appearence.zPosition {
             self.layer.zPosition = zPoz
         }
+        
+        let actionStackFrame = actionsStack.layer.frame
+        actionsStack.layer.drawLine([
+            .init(x: 0, y: 0), .init(x: actionStackFrame.width, y: 0)
+        ], color: appearence.colors.separetor, width: 0.3, opacity: 1)
+        
+        actionsStack.layer.drawLine([
+            .init(x: actionStackFrame.width / 2, y: 2), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height - 4)
+        ], color: appearence.colors.separetor, width: 0.3, opacity: 1)
     }
     
     public var notShowingCondition:(() -> (Bool))?
