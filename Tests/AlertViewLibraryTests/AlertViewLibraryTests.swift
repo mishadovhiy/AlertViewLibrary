@@ -8,9 +8,5 @@ final class AlertViewLibraryTests: XCTestCase {
         // results.
        // XCTAssertEqual(AlertViewLibrary().text, "Hello, World!")
        // XCTAssertEqual(AlertViewLibrary().)
-        let alert = AlertViewLibrary.instanceFromNib() as! AlertViewLibrary
-        alert.show { _ in
-            
-        }
     }
 }
