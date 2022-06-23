@@ -50,15 +50,21 @@ public struct AIAppearence {
         ) {
             
 
-            let defAccent = (background: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60),
-                             view: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60),
-                             higlight: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60))
-            let defNormal = (background: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60),
-                                                                  view: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60))
-            let defButtom = (link: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60),
-                                                              normal: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60))
-            let defTexts = (title: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60),
-                                                                   description: UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.60))
+            let blackColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+            
+            let defAccent = (background: blackColor.withAlphaComponent(0.6),
+                             view: blackColor,
+                             higlight: UIColor.red)
+            
+            let defNormal = (background: blackColor.withAlphaComponent(0.2),
+                             view: blackColor)
+            
+            let defButtom = (link: UIColor.systemBlue,
+                             normal: UIColor.white)
+            
+            let defTexts = (title: UIColor.white,
+                            description: UIColor.systemGray)
+            
             self.accent = accent ?? defAccent
             self.normal = normal ?? defNormal
             self.buttom = buttom ?? defButtom

@@ -133,6 +133,7 @@ public class AlertViewLibrary: UIView {
             
             let hideDescription = type == .internetError ? false : ((description == nil || description == "") ? true : false)
             let hideButtonSeparetor = buttons.1 == nil ? true : false
+            print("hideButtonSeparetor: ", hideButtonSeparetor)
             DispatchQueue.init(label: "showAlert", qos: .userInteractive).async {
                 self.hideIndicatorBlockDesibled = false
                 self.leftFunc = (buttons.0.action, buttons.0.close)
