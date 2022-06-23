@@ -31,11 +31,13 @@ public class AlertViewLibrary: UIView {
     /**
      - ai woudn't show when set so false
      */
-    public var hideIndicatorBlockDesibled = true
+    public var hideIndicatorBlockDesibled = false
     private var normalTitleSize: UIFont = .systemFont(ofSize: 0)
     private let errorFont = UIFont.systemFont(ofSize: 32, weight: .bold)
     
     public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+    
         self.normalTitleSize = self.titleLabel.font
         self.titleLabel.textColor = appearence.colors.texts.title
         self.descriptionLabel.textColor = appearence.colors.texts.description
@@ -55,6 +57,10 @@ public class AlertViewLibrary: UIView {
         separetor = actionsStack.layer.createLine([
             .init(x: actionStackFrame.width / 2, y: 0), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height + 5)
         ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            self.hideIndicatorBlockDesibled = true
+            self.checkUnshowed()
+        }
     }
     private var separetor:CALayer?
     public var notShowingCondition:(() -> (Bool))?
