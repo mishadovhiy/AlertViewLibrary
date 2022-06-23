@@ -151,7 +151,7 @@ public class AlertViewLibrary: UIView {
                                 self.rightButton.isHidden = true
                             }
                         }
-                        if (self.separetor?.isHidden ?? true) != hideButtonSeparetor {
+                        if (self.separetor?.isHidden ?? false) != hideButtonSeparetor {
                             print(hideButtonSeparetor, "hideButtonSeparetorhideButtonSeparetorhideButtonSeparetorhideButtonSeparetor")
                             self.separetor?.isHidden = hideButtonSeparetor
                         }
