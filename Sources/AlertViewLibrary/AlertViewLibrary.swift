@@ -34,29 +34,34 @@ public class AlertViewLibrary: UIView {
     public var hideIndicatorBlockDesibled = true
     private var normalTitleSize: UIFont = .systemFont(ofSize: 0)
     private let errorFont = UIFont.systemFont(ofSize: 32, weight: .bold)
-    
+    private var drded = false
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
     
-        self.normalTitleSize = self.titleLabel.font
-        self.titleLabel.textColor = appearence.colors.texts.title
-        self.descriptionLabel.textColor = appearence.colors.texts.description
-        if let zPoz = appearence.zPosition {
-            self.layer.zPosition = zPoz
+        if !drded {
+            drded = true
+            self.normalTitleSize = self.titleLabel.font
+            self.titleLabel.textColor = appearence.colors.texts.title
+            self.descriptionLabel.textColor = appearence.colors.texts.description
+            if let zPoz = appearence.zPosition {
+                self.layer.zPosition = zPoz
+            }
+            
+            mainView.layer.masksToBounds = true
+            mainView.layer.cornerRadius = 12
+            mainView.layer.shadow()
+            
+            let actionStackFrame = actionsStack.layer.frame
+            actionsStack.layer.drawLine([
+                .init(x: -20, y: 0), .init(x: actionStackFrame.width + 40, y: 0)
+            ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
+            
+            separetor = actionsStack.layer.createLine([
+                .init(x: actionStackFrame.width / 2, y: 0), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height + 5)
+            ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
+            let _ = self.addBluer(insertAt: 0)
         }
         
-        mainView.layer.masksToBounds = true
-        mainView.layer.cornerRadius = 12
-        mainView.layer.shadow()
-        
-        let actionStackFrame = actionsStack.layer.frame
-        actionsStack.layer.drawLine([
-            .init(x: -20, y: 0), .init(x: actionStackFrame.width + 40, y: 0)
-        ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
-        
-        separetor = actionsStack.layer.createLine([
-            .init(x: actionStackFrame.width / 2, y: 0), .init(x: actionStackFrame.width / 2, y: actionStackFrame.height + 5)
-        ], color: appearence.colors.separetor, width: 0.15, opacity: 1)
     }
     private var separetor:CALayer?
     public var notShowingCondition:(() -> (Bool))?
@@ -379,5 +384,38 @@ public class AlertViewLibrary: UIView {
         if imageView.superview?.isHidden != true {
             imageView.superview?.isHidden = true
         }
+    }
+}
+
+
+extension UIView {
+    func addBluer(frame:CGRect? = nil, style:UIBlurEffect.Style = (.init(rawValue: -1000) ?? .regular), insertAt:Int? = nil) -> UIVisualEffectView {
+        let blurEffect = UIBlurEffect(style: style)//prominent//dark//regular
+        let bluer = UIVisualEffectView(effect: blurEffect)
+        //bluer.frame = frame ?? .init(x: 0, y: 0, width: frame?.width ?? self.frame.width, height: frame?.height ?? self.frame.height)
+        // view.insertSubview(blurEffectView, at: 0)
+        let vibracity = UIVisualEffectView(effect: blurEffect)
+        // vibracity.contentView.addSubview()
+        bluer.contentView.addSubview(vibracity)
+        let constaints:[NSLayoutConstraint.Attribute : CGFloat] = [.leading:0, .top:0, .trailing:0, .bottom:0]
+        vibracity.addConstaits(constaints, superV: bluer)
+        if let at = insertAt {
+            self.insertSubview(bluer, at: at)
+        } else {
+            self.addSubview(bluer)
+        }
+        
+        bluer.addConstaits(constaints, superV: self)
+        
+        return bluer
+    }
+    func addConstaits(_ constants:[NSLayoutConstraint.Attribute:CGFloat], superV:UIView) {
+        let layout = superV
+        constants.forEach { (key, value) in
+            let keyNil = key == .height || key == .width
+            let item:Any? = keyNil ? nil : layout
+            superV.addConstraint(.init(item: self, attribute: key, relatedBy: .equal, toItem: item, attribute: key, multiplier: 1, constant: value))
+        }
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
