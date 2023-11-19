@@ -230,7 +230,7 @@ public class AlertViewLibrary: UIView {
                 if self.mainView.isHidden != false {
                     self.mainView.isHidden = false
                 }
-                UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0, options: .allowAnimatedContent) {
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0, options: .allowAnimatedContent) {
                     self.backgroundView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
                 } completion: { _ in
                     window.endEditing(true)
