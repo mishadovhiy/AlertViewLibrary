@@ -152,14 +152,7 @@ public class AlertViewLibrary: UIView {
                         self.buttonStyle(self.rightButton, type: right)
                     }
                     DispatchQueue.main.async {
-                        if buttons.1 == nil {
-                            if self.rightButton.isHidden != true {
-                                self.rightButton.isHidden = true
-                            }
-                        }
-                        if (self.separetor?.isHidden ?? false) != hideButtonSeparetor {
-                            self.separetor?.isHidden = hideButtonSeparetor
-                        }
+                        
                         
                         if type == .error {
                             UIImpactFeedbackGenerator().impactOccurred()
@@ -168,6 +161,14 @@ public class AlertViewLibrary: UIView {
                         self.descriptionLabel.text = type == .internetError ? self.appearence.text.internetError.description : description
                         let mailImage = image ?? self.getAlertImage(image: image, type: type)
                         UIView.animate(withDuration: 0.35) {
+                            if buttons.1 == nil {
+                                if self.rightButton.isHidden != true {
+                                    self.rightButton.isHidden = true
+                                }
+                            }
+                            if (self.separetor?.isHidden ?? false) != hideButtonSeparetor {
+                                self.separetor?.isHidden = hideButtonSeparetor
+                            }
                             self.mainView.backgroundColor = self.appearence.colors.accent.view
                             
                             if self.titleLabel.isHidden != false {
