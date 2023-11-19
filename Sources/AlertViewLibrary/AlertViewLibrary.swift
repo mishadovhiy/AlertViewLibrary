@@ -167,7 +167,7 @@ public class AlertViewLibrary: UIView {
                         self.titleLabel.text = type == .internetError ? self.appearence.text.internetError.title : title
                         self.descriptionLabel.text = type == .internetError ? self.appearence.text.internetError.description : description
                         let mailImage = image ?? self.getAlertImage(image: image, type: type)
-                        UIView.animate(withDuration: 0.20) {
+                        UIView.animate(withDuration: 0.35) {
                             self.mainView.backgroundColor = self.appearence.colors.accent.view
                             
                             if self.titleLabel.isHidden != false {
