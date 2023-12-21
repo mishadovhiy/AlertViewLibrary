@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewLibrary" customModule="AlertViewLibrary">
             <connections>
-                <outlet property="activityIndicatorView" destination="isi-LQ-ATr" id="iUS-Te-GAo"/>
+                <outlet property="activityIndicatorView" destination="isi-LQ-ATr" id="SLG-nG-Xg3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -167,7 +167,6 @@
                 <constraint firstItem="cLP-OF-dNc" firstAttribute="top" secondItem="tpT-tM-Tey" secondAttribute="top" id="jXJ-Bl-t4I"/>
             </constraints>
             <connections>
-                <outlet property="activityIndicatorView" destination="isi-LQ-ATr" id="pT6-NA-kis"/>
                 <outlet property="backgroundView" destination="cLP-OF-dNc" id="RNF-q0-RqX"/>
                 <outlet property="buttonsStack" destination="7Sn-OI-hWw" id="MPt-jF-aIm"/>
                 <outlet property="descriptionLabel" destination="WiV-Qt-Oy6" id="Vxh-KQ-7Ej"/>
