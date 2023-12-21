@@ -13,11 +13,11 @@ public struct AIAppearence {
      - default Text Values
      - setted values would be displeyed if showAlert or showLoading methods would be called without related values
      */
-    var defaultText:Text = .init()
-    var colors:Colors = .init()
-    var images:Images?
-    var additionalLaunchProperties:AIProperties?
-    var animations:Animations = .init()
+    public var defaultText:Text = .init()
+    public var colors:Colors = .init()
+    public var images:Images?
+    public var additionalLaunchProperties:AIProperties?
+    public var animations:Animations = .init()
     
     public static func with(
         _ populator: (inout Self) throws -> ()
@@ -31,14 +31,14 @@ public struct AIAppearence {
 
 public extension AIAppearence {
     struct Animations {
-        var performHide1:CGFloat = 0.16
-        var performHide2:CGFloat = 0.3
-        var setBackground:CGFloat = 0.3
-        var generalAnimation:CGFloat = 0.55
-        var generalAnimationSpring:CGFloat = 0.85
-        var alertShow:CGFloat = 0.3
-        var loadingShow1:CGFloat = 0.35
-        var loadingShow2:CGFloat = 0.15
+        public var performHide1:CGFloat = 0.16
+        public var performHide2:CGFloat = 0.3
+        public var setBackground:CGFloat = 0.3
+        public var generalAnimation:CGFloat = 0.55
+        public var generalAnimationSpring:CGFloat = 0.85
+        public var alertShow:CGFloat = 0.3
+        public var loadingShow1:CGFloat = 0.35
+        public var loadingShow2:CGFloat = 0.15
         
         public static func with(
             _ populator: (inout Self) throws -> ()
@@ -50,8 +50,8 @@ public extension AIAppearence {
     }
     
     struct Images {
-        var alertError:UIImage? = nil
-        var alertSuccess:UIImage? = nil
+        public var alertError:UIImage? = nil
+        public var alertSuccess:UIImage? = nil
         
         public static func with(
             _ populator: (inout Self) throws -> ()
@@ -63,9 +63,9 @@ public extension AIAppearence {
     }
     
     struct AIProperties {
-        var zPosition:CGFloat?
-        var lineWidth:CGFloat?
-        var mainCorners:CGFloat?
+        public var zPosition:CGFloat?
+        public var lineWidth:CGFloat?
+        public var mainCorners:CGFloat?
         
         public static func with(
             _ populator: (inout Self) throws -> ()
@@ -77,12 +77,12 @@ public extension AIAppearence {
     }
     
     struct Text {
-        var loading:String? = nil
-        var standart:String = "Done"
-        var internetError:(title:String, description:String) = (title:"Internet error", description:"Try again later")
-        var error:String = "Error"
-        var okButton:String = "OK"
-        var success:String = "Success"
+        public var loading:String? = nil
+        public var standart:String = "Done"
+        public var internetError:(title:String, description:String) = (title:"Internet error", description:"Try again later")
+        public var error:String = "Error"
+        public var okButton:String = "OK"
+        public var success:String = "Success"
         
         public static func with(
             _ populator: (inout Self) throws -> ()
@@ -97,11 +97,11 @@ public extension AIAppearence {
 
 public extension AIAppearence {
     struct Colors {
-        var alertState:AlertStateColors? = nil
-        var activityState:loadingStateColors? = nil
-        var buttom:ButtonColors? = nil
-        var texts:TextColors? = nil
-        var separetor:UIColor? = nil
+        public var alertState:AlertStateColors? = nil
+        public var activityState:loadingStateColors? = nil
+        public var buttom:ButtonColors? = nil
+        public var texts:TextColors? = nil
+        public var separetor:UIColor? = nil
         
         fileprivate init(alertState: AlertStateColors? = nil,
              activityState: loadingStateColors? = nil,
@@ -164,14 +164,14 @@ public extension AIAppearence {
         }
         
         struct GeneratedAppearence {
-            var view:UIColor? = nil
-            var loaderView:UIColor? = nil
-            var background:UIColor? = nil
-            var alertBackAlpha:CGFloat = 0.6
-            var loaderBackAlpha:CGFloat = 0.2
-            var buttom:ButtonColors? = nil
-            var texts:TextColors? = nil
-            var separetor:UIColor? = nil
+            public var view:UIColor? = nil
+            public var loaderView:UIColor? = nil
+            public var background:UIColor? = nil
+            public var alertBackAlpha:CGFloat = 0.6
+            public var loaderBackAlpha:CGFloat = 0.2
+            public var buttom:ButtonColors? = nil
+            public var texts:TextColors? = nil
+            public var separetor:UIColor? = nil
             
             public static func with(
                 _ populator: (inout Self) throws -> ()
@@ -188,9 +188,9 @@ public extension AIAppearence {
 public extension AIAppearence {
     
     struct AlertStateColors {
-        var background:UIColor? = nil
-        var view:UIColor? = nil
-        var errorHiglight:UIColor? = nil
+        public var background:UIColor? = nil
+        public var view:UIColor? = nil
+        public var errorHiglight:UIColor? = nil
         
         fileprivate init(background: UIColor? = nil, view: UIColor? = nil, errorHiglight: UIColor? = nil) {
             self.background = background ?? Colors.default.alertState?.background
@@ -208,8 +208,8 @@ public extension AIAppearence {
     }
     
     struct loadingStateColors {
-        var background:UIColor? = nil
-        var view:UIColor? = nil
+        public var background:UIColor? = nil
+        public var view:UIColor? = nil
         
         fileprivate init(background: UIColor? = nil, view: UIColor? = nil) {
             self.background = background ?? Colors.default.activityState?.background
@@ -226,8 +226,8 @@ public extension AIAppearence {
     }
     
     struct ButtonColors {
-        var link:UIColor? = nil
-        var normal:UIColor? = nil
+        public var link:UIColor? = nil
+        public var normal:UIColor? = nil
         
         fileprivate init(link: UIColor? = nil, normal: UIColor? = nil) {
             self.link = link ?? Colors.default.buttom?.link
@@ -244,8 +244,8 @@ public extension AIAppearence {
     }
     
     struct TextColors {
-        var title:UIColor? = nil
-        var description:UIColor? = nil
+        public var title:UIColor? = nil
+        public var description:UIColor? = nil
         
         fileprivate init(title: UIColor? = nil, description: UIColor? = nil) {
             self.title = title ?? Colors.default.texts?.title
