@@ -42,6 +42,15 @@ public class AlertManager {
         }
     }
     
+    public var canHideAlert:Bool {
+        get {
+            return alert.canHideAlert
+        }
+        set {
+            alert.canHideAlert = newValue
+        }
+    }
+    
     
     public var contentView:UIView {
         return alert.mainView
