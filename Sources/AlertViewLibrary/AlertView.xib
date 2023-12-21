@@ -20,10 +20,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r67-rA-mCC">
-                            <rect key="frame" x="69.5" y="412" width="275" height="72.5"/>
+                            <rect key="frame" x="69.5" y="389.5" width="275" height="117.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pCz-i8-dc5">
-                                    <rect key="frame" x="5" y="20" width="265" height="47.5"/>
+                                    <rect key="frame" x="5" y="20" width="265" height="92.5"/>
                                     <subviews>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-Nc-t6Q">
                                             <rect key="frame" x="10" y="0.0" width="245" height="80"/>
@@ -45,9 +45,9 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lce-54-1f3">
-                                            <rect key="frame" x="10" y="0.0" width="245" height="47.5"/>
+                                            <rect key="frame" x="10" y="0.0" width="245" height="92.5"/>
                                             <subviews>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xin-gj-jUW">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xin-gj-jUW">
                                                     <rect key="frame" x="0.0" y="0.0" width="245" height="45"/>
                                                     <subviews>
                                                         <activityIndicatorView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="isi-LQ-ATr">
@@ -71,7 +71,7 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-QK-1d0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="47.5"/>
+                                                    <rect key="frame" x="0.0" y="45" width="245" height="47.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wait " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-fd-yHv">
                                                             <rect key="frame" x="0.0" y="0.0" width="245" height="26.5"/>
