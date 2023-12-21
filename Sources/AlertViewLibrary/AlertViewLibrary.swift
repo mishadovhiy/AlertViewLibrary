@@ -12,6 +12,7 @@ public class AlertViewLibrary: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     public var delegate:AlertViewProtocol?
     var properties = AIAppearence()
