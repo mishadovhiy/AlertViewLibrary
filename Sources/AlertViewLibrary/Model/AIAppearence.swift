@@ -155,7 +155,7 @@ public extension AIAppearence {
             return message
         }
         
-        static func generate(
+        public static func generate(
             _ populator: (inout GeneratedAppearence) throws -> ()
         ) rethrows -> Self {
             var message = GeneratedAppearence()
@@ -163,7 +163,7 @@ public extension AIAppearence {
             return .init(message)
         }
         
-        struct GeneratedAppearence {
+        public struct GeneratedAppearence {
             public var view:UIColor? = nil
             public var loaderView:UIColor? = nil
             public var background:UIColor? = nil
