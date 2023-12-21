@@ -7,7 +7,7 @@
 
 import Foundation
 
- class AlertManager {
+public class AlertManager {
     private var alert:AlertViewLibrary!
     //store here unseen
     

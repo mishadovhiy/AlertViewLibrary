@@ -72,7 +72,7 @@ extension AlertViewLibrary {
 
 
 extension AlertViewLibrary {
-    struct AlertShowMetadata {
+    public struct AlertShowMetadata {
         var type: ViewType = .standard
         var image:AIImage? = nil
         var primaryButton:ButtonData? = nil
