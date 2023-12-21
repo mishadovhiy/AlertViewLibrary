@@ -123,7 +123,7 @@ public class AlertViewLibrary: UIView {
     }
     
     public class func instanceFromNib(_ appearence:AIAppearence?) -> AlertViewLibrary {
-        if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: nil, options: nil).first as? AlertViewLibrary
+        if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: self, options: nil).first as? AlertViewLibrary
         {
             if let appearence {
                 result.properties = appearence
