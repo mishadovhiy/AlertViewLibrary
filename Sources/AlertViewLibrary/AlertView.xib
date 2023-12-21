@@ -10,11 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="mainView" destination="r67-rA-mCC" id="Uea-wq-Id7"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="tpT-tM-Tey" customClass="AlertViewLibrary" customModule="AlertViewLibrary">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -172,7 +168,7 @@
                 <outlet property="buttonsStack" destination="7Sn-OI-hWw" id="MPt-jF-aIm"/>
                 <outlet property="descriptionLabel" destination="WiV-Qt-Oy6" id="3a4-Ki-icW"/>
                 <outlet property="imageView" destination="F3A-uB-eiN" id="tfz-VY-tAy"/>
-                <outlet property="mainView" destination="r67-rA-mCC" id="LD3-YF-nCi"/>
+                <outlet property="mainView" destination="r67-rA-mCC" id="QpN-2G-NTV"/>
                 <outlet property="primaryButton" destination="eu5-5S-3G8" id="LrI-sU-DXf"/>
                 <outlet property="secondaryButton" destination="m6c-yj-Awy" id="BVd-t1-hjX"/>
                 <outlet property="titleLabel" destination="8r3-fd-yHv" id="LqJ-mX-uCQ"/>
