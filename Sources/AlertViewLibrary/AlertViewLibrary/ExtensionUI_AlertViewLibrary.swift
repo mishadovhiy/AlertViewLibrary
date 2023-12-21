@@ -102,7 +102,7 @@ extension AlertViewLibrary {
         self.descriptionLabel.text = description
         self.backgroundView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
         self.buttonsStack.isHidden = (true)
-        self.activityIndicatorView.startAnimating()
+     //   self.activityIndicatorView.startAnimating()
     }
     
     func performHide(completion: (() -> ())? = nil) {
@@ -214,7 +214,7 @@ extension AlertViewLibrary {
         let hideTitle = title == nil ? true : false
         let hideDescription = (description == "" || description == nil) ? true : false
         mainView.backgroundColor = self.properties.colors.activityState?.view
-        activityIndicatorView.superview?.isHidden = (false)
+   //     activityIndicatorView.superview?.isHidden = (false)
         descriptionLabel.isHidden = (hideDescription)
         titleLabel.isHidden = (hideTitle)
         imageView.image = nil
@@ -236,7 +236,7 @@ extension AlertViewLibrary {
         self.descriptionLabel.isHidden = (hideDescription)
         
         self.primaryButton.superview?.superview?.isHidden = (false)
-        self.activityIndicatorView.superview?.isHidden = (true)
+     //   self.activityIndicatorView.superview?.isHidden = (true)
         
         if let image = self.alertImage(appearence.image) {
             self.imageView.image = image

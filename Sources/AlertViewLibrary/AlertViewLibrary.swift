@@ -12,7 +12,7 @@ public class AlertViewLibrary: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    //@IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     public var delegate:AlertViewProtocol?
     var properties = AIAppearence()
@@ -51,7 +51,7 @@ public class AlertViewLibrary: UIView {
                 self.mainView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
                 
             } completion: { (_) in
-                self.activityIndicatorView.superview?.layoutIfNeeded()
+         //       self.activityIndicatorView.superview?.layoutIfNeeded()
                 completion?()
             }
         }
