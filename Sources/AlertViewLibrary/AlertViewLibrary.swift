@@ -17,7 +17,7 @@ public class AlertViewLibrary: UIView {
     public var delegate:AlertViewProtocol?
     var properties = AIAppearence()
     var ignoreLoaderCondition:(() -> (Bool))?
-
+    
     var viewModel:AlertLibraryViewModel = .init()
     public var canHideAlert = true
     public var isShowing = false
@@ -49,7 +49,7 @@ public class AlertViewLibrary: UIView {
         } completion: { (_) in
             UIView.animate(withDuration: self.properties.animations.loadingShow2) {
                 self.mainView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
-
+                
             } completion: { (_) in
                 self.activityIndicatorView.superview?.layoutIfNeeded()
                 completion?()
@@ -59,7 +59,7 @@ public class AlertViewLibrary: UIView {
     
     /// - Parameters:
     ///  - appearence - set nill to show alert with OK button
-    func showAlert(title: String?, description: String? = nil, appearence:AlertShowMetadata? = nil) {
+    public func showAlert(title: String?, description: String? = nil, appearence:AlertShowMetadata? = nil) {
         if !canHideAlert {
             viewModel.anshowedAIS.append({
                 self.showAlert(title: title, description:description,
@@ -88,7 +88,7 @@ public class AlertViewLibrary: UIView {
     }
     
     
-// MARK: IBAction
+    // MARK: IBAction
     @IBAction private func closePressed(_ sender: UIButton) {
         fastHide()
     }
@@ -113,7 +113,7 @@ public class AlertViewLibrary: UIView {
     }
     
     
-// MARK: init
+    // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

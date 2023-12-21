@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 public class AlertManager {
     private var alert:AlertViewLibrary!
-    //store here unseen
     
     public init(appearence:AIAppearence? = nil, delegate:AlertViewProtocol? = nil) {
         alert = .instanceFromNib(appearence)
@@ -33,7 +33,7 @@ public class AlertManager {
     }
     
     
-    var isShowing:Bool {
+    public var isShowing:Bool {
         get {
             return alert.isShowing
         }
@@ -43,7 +43,12 @@ public class AlertManager {
     }
     
     
-    func setIgnorShowAI(_ condition:@escaping() -> (Bool)) {
+    public var contentView:UIView {
+        return alert.mainView
+    }
+    
+    
+    public func setIgnorShowAI(_ condition:@escaping() -> (Bool)) {
         alert?.ignoreLoaderCondition = condition
     }
 
