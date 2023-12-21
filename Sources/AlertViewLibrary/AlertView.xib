@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewLibrary" customModule="AlertViewLibrary">
             <connections>
-                <outlet property="activityIndicatorView" destination="isi-LQ-ATr" id="SLG-nG-Xg3"/>
+                <outlet property="activityIndicatorView" destination="isi-LQ-ATr" id="oQe-Sd-nLI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
