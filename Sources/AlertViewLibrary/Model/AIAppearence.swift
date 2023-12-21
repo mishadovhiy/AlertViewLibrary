@@ -29,7 +29,7 @@ public struct AIAppearence {
 }
 
 
-extension AIAppearence {
+public extension AIAppearence {
     struct Animations {
         var performHide1:CGFloat = 0.16
         var performHide2:CGFloat = 0.3
@@ -76,7 +76,7 @@ extension AIAppearence {
         }
     }
     
-    public struct Text {
+    struct Text {
         var loading:String? = nil
         var standart:String = "Done"
         var internetError:(title:String, description:String) = (title:"Internet error", description:"Try again later")
@@ -95,8 +95,8 @@ extension AIAppearence {
 }
 
 
-extension AIAppearence {
-    public struct Colors {
+public extension AIAppearence {
+    struct Colors {
         var alertState:AlertStateColors? = nil
         var activityState:loadingStateColors? = nil
         var buttom:ButtonColors? = nil
@@ -120,6 +120,13 @@ extension AIAppearence {
             let loaderViewRes = from.loaderView ?? (from.view ?? UIColor.black)
             let backgroundRes = from.background ?? (from.view ?? UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
             
+            var linkColor:UIColor!
+            if #available(iOS 13.0, *) {
+                linkColor = .link
+            } else {
+                linkColor = .systemBlue
+            }
+            
             self.init(alertState:
                     .init(background:backgroundRes.withAlphaComponent(from.alertBackAlpha),
                           view: viewRes,
@@ -127,7 +134,7 @@ extension AIAppearence {
                          ),
                          activityState: .init(background: backgroundRes.withAlphaComponent(from.loaderBackAlpha),
                                               view: loaderViewRes),
-                         buttom: .init(link: from.buttom?.link ?? .link,
+                         buttom: .init(link: from.buttom?.link ?? linkColor,
                                        normal: from.buttom?.normal ?? .white),
                          texts: .init(title: from.texts?.title ?? .white,
                                       description: from.texts?.description ?? .systemGray),
@@ -178,7 +185,7 @@ extension AIAppearence {
 }
 
 
-extension AIAppearence {
+public extension AIAppearence {
     
     struct AlertStateColors {
         var background:UIColor? = nil
