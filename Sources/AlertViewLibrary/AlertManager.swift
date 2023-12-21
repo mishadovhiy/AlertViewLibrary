@@ -51,6 +51,10 @@ public class AlertManager {
         }
     }
     
+    public func checkUnseenAlerts() {
+        alert.checkUnseenAlerts()
+    }
+    
     
     public var contentView:UIView {
         return alert.mainView
