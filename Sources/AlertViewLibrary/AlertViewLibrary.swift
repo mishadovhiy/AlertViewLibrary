@@ -51,7 +51,7 @@ public class AlertViewLibrary: UIView {
                 self.mainView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
                 
             } completion: { (_) in
-         //       self.activityIndicatorView.superview?.layoutIfNeeded()
+                self.activityIndicatorView.superview?.layoutIfNeeded()
                 completion?()
             }
         }
