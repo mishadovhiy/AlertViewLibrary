@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension AlertViewLibrary {
-    public func showUnseenAlerts() {
+public extension AlertViewLibrary {
+    func checkUnseenAlerts() {
         if let function = viewModel.anshowedAIS.first as? () -> ()  {
             viewModel.anshowedAIS.removeFirst()
             function()
@@ -20,7 +20,7 @@ extension AlertViewLibrary {
         case verticalSeparetor
     }
     
-    public enum ViewType {
+    enum ViewType {
         /**
          - higligting background
          */

@@ -122,7 +122,7 @@ extension AlertViewLibrary {
                 delegate.alertViewDidDisappear()
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                self.showUnseenAlerts()
+                self.checkUnseenAlerts()
             }
         }
     }
