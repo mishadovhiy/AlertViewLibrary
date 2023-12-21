@@ -49,10 +49,10 @@ extension AlertViewLibrary {
     
     
     public struct ButtonData {
-        var title: String? = nil
-        var style: ButtonType = .regular
-        var close: Bool = true
-        var action: (() -> ())? = nil
+        public var title: String? = nil
+        public var style: ButtonType = .regular
+        public var close: Bool = true
+        public var action: (() -> ())? = nil
         
         public static func with(
             _ populator: (inout Self) throws -> ()
@@ -73,10 +73,10 @@ extension AlertViewLibrary {
 
 extension AlertViewLibrary {
     public struct AlertShowMetadata {
-        var type: ViewType = .standard
-        var image:AIImage? = nil
-        var primaryButton:ButtonData? = nil
-        var secondaryButton:ButtonData? = nil
+        public var type: ViewType = .standard
+        public var image:AIImage? = nil
+        public var primaryButton:ButtonData? = nil
+        public var secondaryButton:ButtonData? = nil
         
         public static func with(
             _ populator: (inout Self) throws -> ()
@@ -87,7 +87,7 @@ extension AlertViewLibrary {
         }
     }
     
-    enum AIImage {
+    public enum AIImage {
         case error
         case success
         case image(UIImage)
