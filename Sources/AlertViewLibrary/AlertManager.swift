@@ -11,7 +11,7 @@ public class AlertManager {
     private var alert:AlertViewLibrary!
     //store here unseen
     
-    init(appearence:AIAppearence? = nil, delegate:AlertViewProtocol? = nil) {
+    public init(appearence:AIAppearence? = nil, delegate:AlertViewProtocol? = nil) {
         alert = .instanceFromNib(appearence)
         alert.delegate = delegate
     }
