@@ -28,7 +28,7 @@ public class AlertManager {
         alert.showAlert(title: title, description: description, appearence: appearence)
     }
     
-    public func hide(completion:@escaping()->()) {
+    public func hide(completion:(()->())? = nil) {
         alert?.fastHide(completion: completion)
     }
     
@@ -48,7 +48,7 @@ public class AlertManager {
     }
     
     
-    public func setIgnorShowAI(_ condition:@escaping() -> (Bool)) {
+    public func setIgnorPresentLoader(_ condition:@escaping() -> (Bool)) {
         alert?.ignoreLoaderCondition = condition
     }
 
