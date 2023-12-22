@@ -1,6 +1,6 @@
 # AlertViewLibrary
 
-<div style="display:inline-block">
+<div style="display:flex;flex-direction: row;">
 
 ![alert](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/4528b64f-7b93-48c6-b90f-c1a784995cf9)
 
