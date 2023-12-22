@@ -11,9 +11,10 @@
 
 # Installation
 
-# Features
-
 # Usage
+
+## Features
+
 
 created by Misha Dovhiy 
 Developer website: https://www.mishadovhiy.com
