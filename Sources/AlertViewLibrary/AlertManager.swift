@@ -72,9 +72,10 @@ public class AlertManager {
 
 
 public extension AlertManager {
-    func showAlertWithOK(title:String, description:String? = nil, viewType:AlertViewLibrary.ViewType = .error, button:AlertViewLibrary.ButtonData? = nil, okTitle:String? = "OK", okPressed:(()->())? = nil) {
+    func showAlertWithOK(title:String, description:String? = nil, viewType:AlertViewLibrary.ViewType = .error, image:AlertViewLibrary.AIImage? = nil, button:AlertViewLibrary.ButtonData? = nil, okTitle:String? = "OK", okPressed:(()->())? = nil) {
         alert.showAlert(title: title, description: description, appearence: .with({
             $0.type = viewType
+            $0.image = image
             $0.primaryButton = .with({
                 $0.title = okTitle
                 $0.style = .error
