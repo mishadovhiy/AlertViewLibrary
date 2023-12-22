@@ -3,6 +3,13 @@
 
 ![activityIndicator](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/61b6ca7f-a91b-434b-94fe-de278a0d8ef5)
 
+# Requirements
+
+# Installation
+
+# Features
+
+# Usage
 
 created by Misha Dovhiy 
 Developer website: https://www.mishadovhiy.com
