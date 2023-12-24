@@ -95,7 +95,7 @@ extension AlertViewLibrary {
 
 }
 
-extension AlertViewLibrary.AlertShowMetadata {
+public extension AlertViewLibrary.AlertShowMetadata {
     static func type(_ type:AlertViewLibrary.ViewType, with:AlertViewLibrary.AlertShowMetadata? = nil) -> AlertViewLibrary.AlertShowMetadata {
         var new = with ?? .with({_ in})
         new.type = type
