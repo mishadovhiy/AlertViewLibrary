@@ -196,9 +196,9 @@ fileprivate extension AlertViewLibrary {
     private func alertImage(_ image:AIImage?) -> UIImage? {
         switch image {
         case .error:
-            return properties.images?.alertError ?? .init(named: "warning", in: nil, compatibleWith: nil)
+            return properties.images?.alertError ?? .init(named: "warning", in: Bundle.module, compatibleWith: nil)
         case .success:
-            return properties.images?.alertSuccess ?? .init(named: "success", in: nil, compatibleWith: nil)
+            return properties.images?.alertSuccess ?? .init(named: "success", in: Bundle.module, compatibleWith: nil)
         case .image(let img):
             return img
         case .none:
