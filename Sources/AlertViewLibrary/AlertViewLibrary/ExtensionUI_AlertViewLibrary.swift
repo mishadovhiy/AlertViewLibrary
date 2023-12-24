@@ -219,6 +219,7 @@ extension AlertViewLibrary {
         titleLabel.isHidden = (hideTitle)
         imageView.image = nil
         imageView.superview?.isHidden = (true)
+        descriptionLabel.text = description
     }
     
     func showAlertAnimation(appearence:AlertShowMetadata?, description:String?) {
