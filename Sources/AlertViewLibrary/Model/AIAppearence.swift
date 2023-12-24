@@ -80,7 +80,7 @@ public extension AIAppearence {
         public var loading:String? = nil
         public var standart:String = "Done"
         public var internetError:(title:String, description:String) = (title:"Internet error", description:"Try again later")
-        public var error:String = "Error"
+        public var error:String = "Error occurred"
         public var okButton:String = "OK"
         public var success:String = "Success"
         
