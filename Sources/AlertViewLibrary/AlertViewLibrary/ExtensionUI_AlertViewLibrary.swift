@@ -245,7 +245,7 @@ extension AlertViewLibrary {
         self.primaryButton.superview?.superview?.isHidden = (false)
         self.activityIndicatorView.superview?.isHidden = (true)
         
-        if let image = self.alertImage(appearence.image) {
+        if let image = self.alertImage(appearence.image, viewType: appearence.type) {
             self.imageView.image = image
             self.imageView.superview?.isHidden = (false)
         } else {
