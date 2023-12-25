@@ -129,6 +129,16 @@ AlertManager.init(appearence:.with({
 ```
 Appearence declaration: https://github.com/mishadovhiy/AlertViewLibrary/blob/main/Sources/AlertViewLibrary/Model/AIAppearence.swift#L10
 
+
+
+<div style="display:flex;flex-direction: row;">
+
+<img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/5e8fa7ad-b873-41eb-ae41-33faff514874" width="45%">
+<img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/adab9d13-b696-43ef-ae78-6d76bfe3176e" width="45%">
+
+</div>
+
+
 # Features
 - Manages unseen alerts
 When Alert View is presenting - all new alerts would be added to the query and would be presented later
