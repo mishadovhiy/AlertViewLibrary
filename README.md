@@ -12,11 +12,11 @@
 - MacOS 10.15 and higher
 
 # Installation
-#### Add AlertViewLibrary Package Dependency to your project
+<h3>Add AlertViewLibrary Package Dependency to your project</h3>
 <img width="862" alt="Screenshot 2023-12-25 at 03 03 42" src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/27f8e18a-0ae1-4cd0-af13-d003bfb81dbd">
 
-#### <p><br><br>
-#### <b>Search for</b>: <a href="https://github.com/mishadovhiy/AlertViewLibrary">https://github.com/mishadovhiy/AlertViewLibrary</a></p>
+<h3><br><br>
+<b>Search for</b>: <a href="https://github.com/mishadovhiy/AlertViewLibrary">https://github.com/mishadovhiy/AlertViewLibrary</a></h3>
 <img width="1278" alt="Screenshot 2023-12-25 at 03 04 25" src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/a6ace39a-ae5a-4a28-a945-5ef0b4024184">
 
 
@@ -128,7 +128,7 @@ AlertManager.init(appearence:.with({
 ```
 Appearence declaration: https://github.com/mishadovhiy/AlertViewLibrary/blob/main/Sources/AlertViewLibrary/Model/AIAppearence.swift#L10
 
-## Features
+# Features
 - Manages unseen alerts
 When Alert View is presenting - all new alerts would be added to the query and would be presented later
 
