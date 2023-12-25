@@ -9,14 +9,19 @@ import UIKit
 
 public struct AIAppearence {
     /**
-     - Parameters:
      - default Text Values
-     - setted values would be displeyed if showAlert or showLoading methods would be called without related values
+     - setted values would be displeyed if showAlert or showLoading methods would be called without title or description parameters
      */
     public var defaultText:Text = .init()
     public var colors:Colors = .init()
+    /**
+     - showed when showAlert method called with error or success viewType
+     */
     public var images:Images?
     public var additionalLaunchProperties:AIProperties?
+    /**
+     - sets custom duration for animations
+     */
     public var animations:Animations = .init()
     
     public static func with(
@@ -97,10 +102,21 @@ public extension AIAppearence {
 
 public extension AIAppearence {
     struct Colors {
+        /**
+         - sets colors for Alert state
+         - displayed when showAlert method called
+         */
         public var alertState:AlertStateColors? = nil
+        /**
+         - sets colors for Loading state
+         - displayed when showLoading method called
+         */
         public var activityState:loadingStateColors? = nil
         public var buttom:ButtonColors? = nil
         public var texts:TextColors? = nil
+        /**
+         - sets separetor color for buttons
+         */
         public var separetor:UIColor? = nil
         
         fileprivate init(alertState: AlertStateColors? = nil,
