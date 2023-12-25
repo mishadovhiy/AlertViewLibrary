@@ -128,7 +128,7 @@ AlertManager.init(appearence:.with({
 }))
 ```
 Appearence declaration: https://github.com/mishadovhiy/AlertViewLibrary/blob/main/Sources/AlertViewLibrary/Model/AIAppearence.swift#L10
-
+<p>All parameters are optional</p>
 
 
 <div style="display:flex;flex-direction: row;">
