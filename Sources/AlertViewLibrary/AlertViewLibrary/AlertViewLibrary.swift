@@ -1,6 +1,6 @@
 import UIKit
 
-public class AlertViewLibrary: UIView {
+class AlertViewLibrary: UIView {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var backgroundView: UIView!

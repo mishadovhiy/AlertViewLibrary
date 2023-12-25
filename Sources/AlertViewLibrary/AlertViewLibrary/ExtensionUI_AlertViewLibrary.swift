@@ -50,20 +50,8 @@ extension AlertViewLibrary {
         let appearence = appearence ?? .init()
         self.canHideAlert = false
         viewModel.leftButtonPressed = (appearence.primaryButton?.action, appearence.primaryButton?.close ?? true)
-        var defaultTitle:String?
-        switch appearence.type {
-        case .error:
-            defaultTitle = properties.defaultText.error
-        case .internetError, .standardError:
-            defaultTitle = properties.defaultText.internetError.title
-        case .standard:
-            defaultTitle = properties.defaultText.standart
-        case .succsess:
-            defaultTitle = properties.defaultText.success
-        default:
-            defaultTitle = nil
-        }
-        self.titleLabel.text = title ?? defaultTitle
+        
+        self.titleLabel.text = title ?? self.alertTitle(for: appearence)
         self.descriptionLabel.text = appearence.type == .internetError ? self.properties.defaultText.internetError.description : description
     }
     
@@ -177,12 +165,8 @@ fileprivate extension AlertViewLibrary {
     private func setButtonStyle(_ button:UIButton, type:ButtonData?) {
         button.setTitleColor(self.buttonToColor(type?.style ?? .regular), for: .normal)
         button.setTitle(type?.title ?? properties.defaultText.okButton, for: .normal)
-        if button.isHidden != false {
-            button.isHidden = false
-        }
-        if button.superview?.isHidden != false {
-            button.superview?.isHidden = false
-        }
+        button.isHidden = false
+        button.superview?.isHidden = false
     }
     
     private func buttonToColor(_ type:ButtonType) -> UIColor {
@@ -190,6 +174,21 @@ fileprivate extension AlertViewLibrary {
         case .error: return .red
         case .link: return properties.colors.buttom?.link ?? .red
         case .regular: return properties.colors.buttom?.normal ?? .red
+        }
+    }
+    
+    func alertTitle(for appearence:AlertShowMetadata?) -> String? {
+        switch appearence?.type {
+        case .error:
+            return properties.defaultText.error
+        case .internetError, .standardError:
+            return properties.defaultText.internetError.title
+        case .standard:
+            return properties.defaultText.standart
+        case .succsess:
+            return properties.defaultText.success
+        default:
+            return nil
         }
     }
     
@@ -202,9 +201,8 @@ fileprivate extension AlertViewLibrary {
                 return properties.images?.alertSuccess ?? .init(named: "success", in: Bundle.module, compatibleWith: nil)
             case .image(let img):
                 return img
-            case .none:
+            case .noImage:
                 return nil
-            default: return nil
             }
         } else {
             switch viewType {

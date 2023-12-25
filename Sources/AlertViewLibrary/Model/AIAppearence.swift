@@ -36,13 +36,37 @@ public struct AIAppearence {
 
 public extension AIAppearence {
     struct Animations {
+        /**
+         - default: 0.16
+         */
         public var performHide1:CGFloat = 0.16
+        /**
+         - default: 0.3
+         */
         public var performHide2:CGFloat = 0.3
+        /**
+         - default: 0.3
+         */
         public var setBackground:CGFloat = 0.3
+        /**
+         - default: 0.55
+         */
         public var generalAnimation:CGFloat = 0.55
+        /**
+         - default: 0.85
+         */
         public var generalAnimationSpring:CGFloat = 0.85
+        /**
+         - default: 0.3
+         */
         public var alertShow:CGFloat = 0.3
+        /**
+         - default: 0.35
+         */
         public var loadingShow1:CGFloat = 0.35
+        /**
+         - default: 0.15
+         */
         public var loadingShow2:CGFloat = 0.15
         
         public static func with(
