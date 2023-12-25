@@ -144,5 +144,6 @@ Appearence declaration: https://github.com/mishadovhiy/AlertViewLibrary/blob/mai
 When Alert View is presenting - all new alerts would be added to the query and would be presented later
 # Usage example in apps
 - Budget Tracker App https://github.com/mishadovhiy/Budget-Tracker/blob/master/Budget%20Tracker/AppDelegate/AppDelegate.swift#L31
+- Random Moview App https://github.com/mishadovhiy/randomMovie/blob/main/MovieList/Model/TestAlert.swift#L11
 
 <p><br><br><br>Created by <a href="https://www.mishadovhiy.com">Misha Dovhiy</a><br><br></p>
