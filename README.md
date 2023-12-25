@@ -7,11 +7,25 @@
 
 </div>
 
-# Requirements
+# Compatibility
+- iOS 11 and higher
+- MacOS 10.15 and higher
 
 # Installation
+#### Add AlertViewLibrary Package Dependency to your project
+<img width="862" alt="Screenshot 2023-12-25 at 03 03 42" src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/27f8e18a-0ae1-4cd0-af13-d003bfb81dbd">
+
+#### <p><br><br>
+#### <b>Search for</b>: <a href="https://github.com/mishadovhiy/AlertViewLibrary">https://github.com/mishadovhiy/AlertViewLibrary</a></p>
+<img width="1278" alt="Screenshot 2023-12-25 at 03 04 25" src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/a6ace39a-ae5a-4a28-a945-5ef0b4024184">
+
+
 
 # Usage
+
+
+
+# Customization
 
 ## Features
 - Manages unseen alerts
