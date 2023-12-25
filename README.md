@@ -50,10 +50,6 @@ alert.showLoading(description: "Your loading description")
 ```
 alert.showAlert(title: "Your Title", description: "Your Description", appearence: .with({
     $0.image = .image(.init(named: "screen1")!)
-    $0.primaryButton = .with({
-        $0.close = false
-        $0.action = self.test2Perform
-    })
 }))
 ```
 
