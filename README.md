@@ -32,7 +32,7 @@ import AlertViewLibrary
 lazy var alert:AlertManager = .init()
 ```
 Done! And now you can use the Library
-## Usage Basic Examples
+## Basic Usage Examples
 <div style="display:flex;flex-direction: row;">
 
 <img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/67196cbf-f216-4b2a-a5b3-48a782ddc874" width="35%">
@@ -40,6 +40,32 @@ Done! And now you can use the Library
 <img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/125d72c7-8656-4d92-9443-cf3c10013b0d" width ="30%">
 
 </div>
+
+### Show Loading indicator
+```
+alert.showLoading(description: "Your loading description")
+```
+### Show Alert
+```
+alert.showAlert(title: "Your Title", description: "Your Description", appearence: .with({
+    $0.image = .image(.init(named: "screen1")!)
+    $0.primaryButton = .with({
+        $0.close = false
+        $0.action = self.test2Perform
+    })
+}))
+```
+
+##### Error Alert
+
+
+https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/0853c578-579b-429b-9887-eaffed4f1a5c
+
+
+
+```
+alert.showAlert(title: nil, appearence: .type(.error))
+```
 
 
 # Customization
