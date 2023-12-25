@@ -58,7 +58,11 @@ alert.showAlert(title: "Your Title", description: "Your Description", appearence
 
 ### Alert Types
 
-https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/0853c578-579b-429b-9887-eaffed4f1a5c
+
+
+https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/662eb63e-11e4-4b16-a1d8-937e0b197c8b
+
+
 
 
 ```
@@ -87,6 +91,42 @@ alert.showAlert(title: nil, appearence: .with({
 
 ![customAlert](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/ecc32cd9-7c90-48a5-9a74-154a30d2be2c)
 
+
+```
+AlertManager.init(appearence:.with({
+    $0.colors = .with({
+        $0.alertState = .with({
+            $0.view = blue
+            $0.background = .black.withAlphaComponent(0.5)
+        })
+        $0.activityState = .with({
+            $0.view = orange.withAlphaComponent(0.8)
+            $0.background = .black.withAlphaComponent(0.1)
+        })
+        $0.texts = .with({
+            $0.title = .black
+            $0.description = .black.withAlphaComponent(0.5)
+        })
+        $0.buttom = .with({
+            $0.link = .black
+            $0.normal = .gray
+        })
+    })
+    $0.animations = .with({
+        $0.setBackground = 0.8
+        $0.alertShow = 0.5
+        $0.performHide1 = 0.5
+        $0.performHide2 = 0.3
+        $0.loadingShow1 = 0.4
+        $0.loadingShow2 = 0.5
+    })
+    $0.images = .with({
+        $0.alertError = nil
+        $0.alertSuccess = nil
+    })
+}))
+```
+Appearence declaration: https://github.com/mishadovhiy/AlertViewLibrary/blob/main/Sources/AlertViewLibrary/Model/AIAppearence.swift#L10
 
 ## Features
 - Manages unseen alerts
