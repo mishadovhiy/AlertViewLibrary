@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension AlertViewLibrary {
+public extension AlertViewLibrary {
     func checkUnseenAlerts() {
         if let function = viewModel.anshowedAIS.first as? () -> ()  {
             viewModel.anshowedAIS.removeFirst()
@@ -69,7 +69,7 @@ extension AlertViewLibrary {
     }
 }
 
-extension AlertViewLibrary {
+public extension AlertViewLibrary {
     public struct AlertShowMetadata {
         public var type: ViewType = .standard
         public var image:AIImage? = nil
@@ -94,7 +94,7 @@ extension AlertViewLibrary {
 
 }
 
-extension AlertViewLibrary.AlertShowMetadata {
+public extension AlertViewLibrary.AlertShowMetadata {
     static func type(_ type:AlertViewLibrary.ViewType, with:AlertViewLibrary.AlertShowMetadata? = nil) -> AlertViewLibrary.AlertShowMetadata {
         var new = with ?? .with({_ in})
         new.type = type
