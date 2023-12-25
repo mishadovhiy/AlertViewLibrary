@@ -35,11 +35,8 @@ class AlertViewLibrary: UIView {
     /// - Parameters:
     ///  - canIgnore - if ignoreCondition == true: Loader wouldn't be showed
     public func showLoading(title: String? = nil, description: String? = nil, appeareAnimation:Bool = true, canIgonre:Bool = false, completion: (() -> ())? = nil) {
-        if canIgonre && (ignoreLoaderCondition?() ?? false) {
+        if (canIgonre && (ignoreLoaderCondition?() ?? false)) || !self.canHideAlert {
             completion?()
-            return
-        }
-        if !self.canHideAlert {
             return
         }
         let title = title ?? properties.defaultText.loading
