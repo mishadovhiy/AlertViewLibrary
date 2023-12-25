@@ -31,8 +31,16 @@ import AlertViewLibrary
 ```
 lazy var alert:AlertManager = .init()
 ```
+Done! And now you can use the Library
 ## Usage Basic Examples
-![preview1](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/67196cbf-f216-4b2a-a5b3-48a782ddc874)
+<div style="display:flex;flex-direction: row;">
+
+<img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/67196cbf-f216-4b2a-a5b3-48a782ddc874" width="35%">
+<img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/86d540c8-1dcb-4094-b08b-4e8099c39840" width = "30%">
+<img src="https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/125d72c7-8656-4d92-9443-cf3c10013b0d" width ="30%">
+
+</div>
+
 
 # Customization
 
