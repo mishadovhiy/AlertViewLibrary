@@ -56,19 +56,37 @@ alert.showAlert(title: "Your Title", description: "Your Description", appearence
 }))
 ```
 
-##### Error Alert
-
+### Alert Types
 
 https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/0853c578-579b-429b-9887-eaffed4f1a5c
-
 
 
 ```
 alert.showAlert(title: nil, appearence: .type(.error))
 ```
 
+<p>appearence: Declared in <a href="https://github.com/mishadovhiy/AlertViewLibrary/blob/main/Sources/AlertViewLibrary/AlertViewLibrary/Extensions_AlertViewLibrary.swift#L74" target="blank">https://github.com/mishadovhiy/AlertViewLibrary/blob/main/Sources/AlertViewLibrary/AlertViewLibrary/Extensions_AlertViewLibrary.swift#L74</a></p>
+
+#### ViewType
+primary types:
+- error
+- standard (default)
+- succsess
+<p>Note: <small><b>.error</b> and <b>.success</b> types are setting default title (when alert title is nill) and default image</small><br>
+default image or title can be setted when initializing AlertManager</p>
+
+To Show error or success without default image, set
+```
+alert.showAlert(title: nil, appearence: .with({
+    $0.type = .error
+    $0.image = AlertViewLibrary.AIImage.none
+}))
+```
 
 # Customization
+
+![customAlert](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/ecc32cd9-7c90-48a5-9a74-154a30d2be2c)
+
 
 ## Features
 - Manages unseen alerts
