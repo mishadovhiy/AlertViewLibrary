@@ -142,6 +142,8 @@ Appearence declaration: https://github.com/mishadovhiy/AlertViewLibrary/blob/mai
 # Features
 - Manages unseen alerts
 When Alert View is presenting - all new alerts would be added to the query and would be presented later
+- Customize animation, default texts, default images, colors, layer (corner radius, etc)
+  
 # Usage example in apps
 - Budget Tracker App https://github.com/mishadovhiy/Budget-Tracker/blob/master/Budget%20Tracker/AppDelegate/AppDelegate.swift#L31
 - Random Moview App https://github.com/mishadovhiy/randomMovie/blob/main/MovieList/Model/TestAlert.swift#L11
