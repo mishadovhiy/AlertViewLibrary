@@ -84,6 +84,10 @@ alert.showAlert(title: nil, appearence: .with({
 }))
 ```
 
+And you can set primary and secondary button (with type, title and completion handler)
+if primaryButton or secondaryButton is not initialized in showAlert method - would be displayed single ok button that hides an alert (default ok title text could be setted when initializing the Library)
+
+
 # Customization
 
 ![customAlert](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/ecc32cd9-7c90-48a5-9a74-154a30d2be2c)
