@@ -37,7 +37,6 @@ public extension AlertViewLibrary {
         case standardError
         case ai
         
-        
         var isError:Bool {
             switch self {
             case .error, .internetError, .standardError: return true
@@ -91,6 +90,7 @@ extension AlertViewLibrary {
         case error
         case success
         case image(UIImage)
+        case none
     }
 
 }
