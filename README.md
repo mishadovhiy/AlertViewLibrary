@@ -22,8 +22,17 @@
 
 
 # Usage
-
-
+## Initialization
+### Import Library
+```
+import AlertViewLibrary
+```
+### Initialize Library
+```
+lazy var alert:AlertManager = .init()
+```
+## Usage Basic Examples
+![preview1](https://github.com/mishadovhiy/AlertViewLibrary/assets/44978117/67196cbf-f216-4b2a-a5b3-48a782ddc874)
 
 # Customization
 
