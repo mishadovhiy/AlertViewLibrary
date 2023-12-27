@@ -39,8 +39,8 @@ public class AlertViewLibrary: UIView {
             completion?()
             return
         }
-        let title = title ?? properties.defaultText.loading
-        prepareShowLoading(title: title)
+        let description = description ?? properties.defaultText.loading
+        prepareShowLoading(title: title, description: description)
         UIView.animate(withDuration: appeareAnimation ? properties.animations.loadingShow1 : 0.1) {
             self.showLoaderAnimation(title: title, description: description)
         } completion: { (_) in

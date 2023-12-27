@@ -81,7 +81,7 @@ extension AlertViewLibrary {
     }
     
     
-    func prepareShowLoading(title:String?) {
+    func prepareShowLoading(title:String?, description:String?) {
         self.isShowing = true
         viewModel.canCloseOnSwipe = false
         self.setBackground(higlight: false, ai: true)
@@ -228,7 +228,6 @@ extension AlertViewLibrary {
         titleLabel.isHidden = (hideTitle)
         imageView.image = nil
         imageView.superview?.isHidden = (true)
-        descriptionLabel.text = description
     }
     
     func showAlertAnimation(appearence:AlertShowMetadata?, description:String?) {
