@@ -111,13 +111,6 @@ public class AlertViewLibrary: UIView {
     
     
     // MARK: init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     public class func instanceFromNib(_ appearence:AIAppearence?) -> AlertViewLibrary {
         if let result = UINib(nibName: "AlertView", bundle: Bundle.module).instantiate(withOwner: self, options: nil).first as? AlertViewLibrary
