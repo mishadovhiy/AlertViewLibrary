@@ -12,12 +12,7 @@ public class AlertManager {
     private var alert:AlertViewLibrary!
     
     public init(appearence:AIAppearence? = nil, delegate:AlertViewProtocol? = nil) {
-        alert = .init(frame: .zero)//.instanceFromNib(appearence)
-        alert.properties = appearence ?? .init()
-        let appDelegate = UIApplication.shared.keyWindow
-        let height = (appDelegate?.frame.height ?? 0) + 200
-        alert.backgroundView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, height, 0)
-
+        alert = .instanceFromNib(appearence)
         alert.delegate = delegate
     }
     
