@@ -32,6 +32,8 @@ import AlertViewLibrary
 ```
 lazy var alert:AlertManager = .init()
 ```
+<p>// performs instantialization of UIView from xib</p>
+
 Done! And now you can use the Library
 ## Basic Usage Examples
 <div style="display:flex;flex-direction: row;">
@@ -46,12 +48,15 @@ Done! And now you can use the Library
 ```
 alert.showLoading(description: "Your loading description")
 ```
+<p>// Adds self (UIView) to UIWindow of active UIScene</p>
+
 ### Show Alert
 ```
 alert.showAlert(title: "Your Title", description: "Your Description", appearence: .with({
     $0.image = .image(.init(named: "screen1")!)
 }))
 ```
+<p>// Adds self (UIView) to UIWindow of active UIScene</p>
 
 ### Alert Types
 

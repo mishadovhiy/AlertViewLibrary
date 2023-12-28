@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class AlertManager {
+final public class AlertManager {
     private var alert:AlertViewLibrary!
     
     public init(appearence:AIAppearence? = nil, delegate:AlertViewProtocol? = nil) {
@@ -18,16 +18,19 @@ public class AlertManager {
     
     /// - Parameters:
     ///  - canIgnore - if ignoreCondition == true: Loader wouldn't be showed
+    /// - adds self as subview to the UIWindow of active UIWindowScene
     public func showLoading(title: String? = nil, description: String? = nil, canIgonre:Bool = false, completion: (() -> ())? = nil) {
         alert.showLoading(title: title, description: description, canIgonre: canIgonre, completion: completion)
     }
     
     /// - Parameters:
     ///  - appearence - set nill to show alert with OK button
+    /// - adds self as subview to the UIWindow of active UIWindowScene
     public func showAlert(title: String?, description: String? = nil, appearence:AlertViewLibrary.AlertShowMetadata? = nil) {
         alert.showAlert(title: title, description: description, appearence: appearence)
     }
     
+    /// - removes self from super view
     public func hide(completion:(()->())? = nil) {
         alert?.fastHide(completion: completion)
     }

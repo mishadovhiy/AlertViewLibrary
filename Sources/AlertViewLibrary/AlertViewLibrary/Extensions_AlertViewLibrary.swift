@@ -32,7 +32,7 @@ public extension AlertViewLibrary {
         case succsess
         case standard
         /**
-         - error type without higlight
+         - error type without higligting background
          */
         case standardError
         case ai
@@ -49,7 +49,14 @@ public extension AlertViewLibrary {
     
     public struct ButtonData {
         public var title: String? = nil
+        /**
+         - default: .regular
+         */
         public var style: ButtonType = .regular
+        /**
+         - hides Alert View when UIButton pressed
+         - default: true
+         */
         public var close: Bool = true
         public var action: (() -> ())? = nil
         

@@ -32,8 +32,6 @@ public class AlertViewLibrary: UIView {
         self.removeFromSuperview()
     }
     
-    /// - Parameters:
-    ///  - canIgnore - if ignoreCondition == true: Loader wouldn't be showed
     public func showLoading(title: String? = nil, description: String? = nil, appeareAnimation:Bool = true, canIgonre:Bool = false, completion: (() -> ())? = nil) {
         if (canIgonre && (ignoreLoaderCondition?() ?? false)) || !self.canHideAlert {
             completion?()
@@ -54,8 +52,7 @@ public class AlertViewLibrary: UIView {
         }
     }
     
-    /// - Parameters:
-    ///  - appearence - set nill to show alert with OK button
+
     public func showAlert(title: String?, description: String? = nil, appearence:AlertShowMetadata? = nil) {
         if !canHideAlert {
             viewModel.anshowedAIS.append({
